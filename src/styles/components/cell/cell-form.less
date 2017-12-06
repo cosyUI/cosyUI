@@ -1,0 +1,145 @@
+@import "cell-variable";
+
+.@{css-prefix}label {
+  display: block;
+  width: @cellLabelWidth;
+  .text_wrap();
+}
+
+// input
+.@{css-prefix}input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  font-size: inherit;
+  color: inherit;
+  height: @cellLineHeight*@cellFontSize;
+  line-height: @cellLineHeight;
+  border-radius: 0;
+
+  // hides the spin-button
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+}
+
+// textarea
+.@{css-prefix}textarea {
+  display: block;
+  border: 0;
+  resize: none;
+  width: 100%;
+  color: inherit;
+  font-size: @cellTipsFontSize;
+  line-height: inherit;
+  outline: 0;
+  -webkit-appearance: none;
+  border-radius: 0;
+  &-counter {
+    color: @cellTipsColor;
+    text-align: right;
+    .@{css-prefix}cell-warn & {
+      color: @brand-danger;
+    }
+  }
+}
+
+.@{css-prefix}cells-form {
+  .@{css-prefix}cell-ft {
+    font-size: 0;
+  }
+  input, textarea, label[for] {
+    .setTapColor();
+  }
+}
+
+.@{css-prefix}cell-warn {
+  color: @cellTextWarnColor;
+}
+
+.@{css-prefix}cell-vcode {
+  padding-top: 0.25rem;
+  padding-right: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.@{css-prefix}vcode-img {
+  margin-left: 0.25rem;
+  height: @cellHeight;
+  vertical-align: middle;
+}
+
+//select
+.@{css-prefix}cell-select {
+  padding: 0;
+  .@{css-prefix}select {
+    padding-left: @cellGapH;
+  }
+  .@{css-prefix}cell-bd {
+    &:after {
+      content: " ";
+      .setArrow(right, 0.3rem, #C8C8CD, 0.1rem);
+      position: absolute;
+      top: 50%;
+      right: @cellGapH;
+      margin-top: -0.2rem;
+      z-index: 2;
+    }
+  }
+}
+
+.@{css-prefix}select {
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  width: 100%;
+  font-size: inherit;
+  height: @cellHeight;
+  line-height: @cellHeight;
+  position: relative;
+  z-index: 1;
+  padding-right: 1.5rem;
+  padding-left: @cellGapH;
+
+}
+
+.@{css-prefix}cell-select-before {
+  padding-right: @cellGapH;
+  .@{css-prefix}select {
+    width: @cellLabelWidth;
+    box-sizing: border-box;
+  }
+  .@{css-prefix}cell-hd {
+    position: relative;
+    &:after {
+      .setRightLine();
+    }
+    &:before {
+      content: " ";
+      .setArrow(right, 0.3rem, #C8C8CD, 0.1rem);
+      position: absolute;
+      top: 50%;
+      right: @cellGapH;
+      margin-top: -0.2rem;
+      z-index: 2;
+    }
+  }
+  .@{css-prefix}cell-bd {
+    padding-left: @cellGapH;
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.@{css-prefix}cell-select-after {
+  padding-left: @cellGapH;
+  .@{css-prefix}select {
+    padding-left: 0;
+  }
+}

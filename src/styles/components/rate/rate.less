@@ -1,0 +1,53 @@
+@import "rate-variable";
+
+.@{css-prefix}rate {
+  display: inline-block;
+  text-align: left;
+  height: @rateHeight;
+  line-height: @rateHeight;
+  &-item {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    color: @rateDefaultColor;
+    position: relative;
+    height: inherit;
+    &:hover {
+      color: @rateSelectedColor;
+    }
+    &.is-disabled {
+      cursor: not-allowed;
+      .@{css-prefix}rate-outer {
+        color: @rateDefaultColor;
+      }
+    }
+    &.is-active {
+      color: @rateSelectedColor;
+      .@{css-prefix}rate-outer {
+        color: @rateSelectedColor;
+      }
+    }
+  }
+  &-inner {
+    position: relative;
+    display: inline-block;
+    height: inherit;
+  }
+  &-outer {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    height: inherit;
+  }
+  .@{css-prefix}iconfont {
+    display: inline-block;
+    font-size: @rateFontSize;
+    line-height: 1;
+    vertical-align: top;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

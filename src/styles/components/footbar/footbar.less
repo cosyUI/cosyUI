@@ -1,0 +1,94 @@
+@import "footbar-variable";
+
+@btmPrefixCls: ~"@{css-prefix}footbar";
+
+.@{btmPrefixCls} {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: @footbar-height;
+  background-color: @footbar-bg;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: @footbar-zindex;
+  &:before {
+    .setTopLine();
+  }
+  &-item {
+    color: @footbar-color;
+    flex: 1;
+    display: block;
+    text-align: center;
+  }
+  & .@{css-prefix}tabbar {
+    position: relative;
+    width: auto;
+    height: @footbar-height;
+    background-color: transparent;
+    flex: none;
+    display: flex;
+    z-index: 0;
+    & .@{css-prefix}tabbar-item {
+      color: @footbar-color;
+      width: 58px;
+      min-width: 40px;
+      height: @footbar-height;
+      .@{css-prefix}tabbar-icon {
+        &-text {
+          font-size: 16px;
+          line-height: 1;
+          vertical-align: middle;
+        }
+      }
+      &.@{btmPrefixCls}-check {
+        width: auto;
+        padding-left: 10px;
+        .@{css-prefix}tabbar-icon {
+          .@{css-prefix}iconfont {
+            font-size: 28px;
+          }
+        }
+      }
+    }
+  }
+  &-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .@{css-prefix}btn {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: @footbar-btn-width;
+      height: @footbar-height;
+      padding: @footbar-btn-padding;
+      font-size: @footbar-btn-font-size;
+      border-width: 0;
+      margin: 0;
+    }
+  }
+  &-info {
+    text-align: left;
+    padding-left: 15px;
+    & p {
+      display: block;
+      font-size: @footbar-font-size;
+      color: @footbar-color;
+      line-height: 1.2;
+    }
+    p + p {
+      margin-top: 5px;
+    }
+    & [class*=-footbar-total] {
+      font-size: @footbar-info-font-size;
+      font-weight: bold;
+      color: @footbar-info-color;
+      em {
+        color: @brand-primary;
+      }
+    }
+  }
+}

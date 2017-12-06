@@ -1,0 +1,138 @@
+@import "uploader-varivable";
+
+.@{css-prefix}uploader {
+  background-color: #ffffff;
+  padding: 10px 15px;
+  &-hd {
+    display: flex;
+    padding-bottom: 10px;
+    align-items: center;
+    line-height: 24px;
+    font-size: 16px;
+  }
+  &-title {
+    flex: 1;
+  }
+  &-info {
+    color: #B2B2B2;
+  }
+  &-bd {
+    overflow: hidden;
+  }
+  &-files {
+    list-style: none;
+  }
+  &-file {
+    float: left;
+    margin-right: 9px;
+    margin-bottom: 9px;
+    width: 79px;
+    height: 79px;
+    background: no-repeat center center;
+    background-size: cover;
+    &-action{
+      position: relative;
+    }
+    &-close{
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(30%, -30%);
+      color: #FFFFFF;
+      width: 20px;
+      height: 20px;
+      &:before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+      }
+      .@{css-prefix}iconfont{
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+    }
+    &-status {
+      position: relative;
+      &:before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);
+      }
+      .@{css-prefix}uploader-file-content {
+        display: block;
+      }
+    }
+    &-content {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #FFFFFF;
+      &-text{
+        display: inline-block;
+        font-size: 16px;
+      }
+      .@{css-prefix}iconfont{
+        display: inline-block;
+      }
+    }
+  }
+  &-input-box {
+    float: left;
+    position: relative;
+    margin-right: 9px;
+    margin-bottom: 9px;
+    width: 79px;
+    height: 79px;
+    border: 1px solid #D9D9D9;
+    &:before, &:after {
+      content: " ";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #D9D9D9;
+    }
+    &:before {
+      width: 2px;
+      height: 40px;
+    }
+    &:after {
+      width: 40px;
+      height: 2px;
+    }
+    &:active {
+      border-color: #999999;
+      &:before, &:after {
+        background-color: #999999;
+      }
+    }
+  }
+  &-input {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    .setTapColor();
+  }
+}

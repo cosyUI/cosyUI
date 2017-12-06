@@ -1,0 +1,31 @@
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+.button-variant(@color, @background, @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &:hover,
+  &:active,
+  &.@{btnPrefixCls}-active {
+    color: fade(@color, 70%);
+    background-color: darken(@background, 10%);
+    border-color: darken(@border, 10%);
+  }
+  &.@{btnPrefixCls}-disabled,
+  &[disabled] {
+    color: fade(@color, 60%);
+    opacity: .4;
+  }
+}
+
+// Button sizes
+.button-size(@button-height,@button-font-size, @button-border-radius: 0px) {
+  font-size: @button-font-size;
+  height: @button-height;
+  line-height: @button-height;
+  border-radius: @button-border-radius;
+}

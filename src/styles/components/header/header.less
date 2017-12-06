@@ -1,0 +1,98 @@
+@import "header-variable";
+
+@headerPrefixCls: ~"@{css-prefix}header";
+
+.@{headerPrefixCls} {
+  position: relative;
+  background-color: @header-bg-color;
+  height: @header-height;
+  line-height: @header-height;
+  padding: @header-padding-base;
+  color: @header-text-color;
+  font-size: @header-font-size;
+  text-align: center;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  z-index: @zindex-header;
+  &-title {
+    .ellipsis();
+    font-size: @header-title-font-size;
+    font-weight: normal;
+    flex: 1;
+    height: inherit;
+  }
+  &-right,
+  &-left {
+    position: relative;
+    flex: .5;
+    height: inherit;
+    display: flex;
+    align-items: center;
+  }
+  &-left {
+    .left-arrow {
+      display: block;
+      padding-right: 5px;
+      &:after {
+        content: " ";
+        .setArrow(left, 10px, @header-text-color, 2px);
+        position: relative;
+        top: 0px;
+        left: 2px;
+      }
+    }
+  }
+  &-right {
+    justify-content: flex-end;
+  }
+  &-btn {
+    position: relative;
+    display: block;
+    line-height: 1.5;
+    text-align: center;
+    color: inherit;
+    font-size: 14px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    min-width: 30px;
+    .@{css-prefix}iconfont {
+      line-height: 1;
+      display: inline-block;
+      font-size: 24px;
+      vertical-align: middle;
+    }
+    .@{css-prefix}iconfont + .@{headerPrefixCls}-btn-text {
+      margin-left: 2px;
+    }
+    & + & {
+      padding-left: 5px;
+    }
+  }
+  /* 图表 文字 垂直 Vertical*/
+  &-vertical {
+    line-height: 1.2;
+    padding-top: 0;
+    padding-bottom: 0;
+    .@{css-prefix}iconfont {
+      display: block;
+      font-size: 18px;
+    }
+    .@{css-prefix}iconfont + .@{headerPrefixCls}-btn-text {
+      margin-left: 0px;
+      font-size: 12px;
+    }
+  }
+  /* 图表 文字 水平 Horizontal*/
+  &-level {
+    .@{css-prefix}iconfont {
+      font-size: 20px;
+    }
+  }
+  a {
+    &:hover,
+    &:active {
+      color: @header-text-color;
+    }
+  }
+}

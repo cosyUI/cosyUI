@@ -1,0 +1,31 @@
+@import "menu-variable";
+
+@menuPrefixCls: ~"@{css-prefix}menu";
+@flexPrefixCls: ~"@{css-prefix}flexbox";
+@cellPrefixCls: ~"@{css-prefix}cell";
+
+.@{menuPrefixCls} {
+  background-color: #f5f5f9;
+  & &-select-container {
+    flex-grow: 2;
+  }
+
+  .@{flexPrefixCls} {
+    .@{flexPrefixCls}-item {
+      overflow-y: scroll;
+
+      .@{css-prefix}cells {
+        background-color: transparent;
+      }
+      .@{css-prefix}cell {
+        background-color: transparent;
+      }
+      &:first-child {
+        background-color: @firstMenuColor;
+      }
+      &:last-child {
+        background-color: @fill-base;
+      }
+    }
+  }
+}

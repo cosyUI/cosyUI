@@ -1,0 +1,63 @@
+@import "cell-variable";
+
+.@{css-prefix}cell-swipe {
+  display: block;
+  padding: 0;
+  .@{css-prefix}cell-wrapper,
+  .@{css-prefix}cell-left,
+  .@{css-prefix}cell-right {
+    transition: transform 150ms ease-in-out;
+  }
+  .@{css-prefix}cell-left,
+  .@{css-prefix}cell-right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    z-index: 2;
+  }
+  .@{css-prefix}cell-left {
+    left: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  .@{css-prefix}cell-right {
+    right: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  .@{css-prefix}cell-wrapper {
+    position: relative;
+    z-index: 1;
+    &:before {
+      display: none;
+    }
+  }
+
+  &-btn {
+    display: inline-block;
+    padding: 0 @cellSwipeBtnGapH;
+    color: #ffffff;
+    font-size: @cellSwipeBtnFontSize;
+    position: relative;
+    > span {
+      display: block;
+      line-height: 1;
+      vertical-align: top;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &-default {
+      background-color: @cellSwipeBtnDefaultColor;
+    }
+    &-warn {
+      background-color: @cellSwipeBtnWarnColor;
+    }
+  }
+
+  .@{css-prefix}check-core {
+    vertical-align: top;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

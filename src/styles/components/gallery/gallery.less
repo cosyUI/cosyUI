@@ -1,0 +1,60 @@
+@import "gallery-variable";
+
+.@{css-prefix}gallery {
+  display: block;
+  padding: 0.25rem 0.25rem 0 0.25rem;
+  margin: 0 auto;
+  &-item {
+    display: block;
+    height: auto;
+    float: left;
+    padding: 0.25rem;
+    > a {
+      display: block;
+    }
+  }
+  &-pic {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  &-info {
+    margin-top: 0.5rem;
+    p {
+      color: #666666;
+      font-size: .7rem;
+      line-height: 1rem;
+    }
+    & [class*=-gallery-title] {
+      font-weight: 400;
+      font-size: 0.8rem;
+      color: #333333;
+      line-height: 1rem;
+    }
+
+    & [class*=-gallery-subtitle] {
+      font-size: 0.7rem;
+      color: #333333;
+      line-height: 1rem;
+    }
+
+    & [class*=-gallery-desc] {
+      font-size: 0.7rem;
+      color: #666666;
+      line-height: 1.2;
+    }
+
+    & [class*=-gallery-tip] {
+      font-size: 0.6rem;
+      color: #666666;
+      line-height: 1.2;
+    }
+
+    & [class*=-gallery-title],
+    & [class*=-gallery-subtitle] {
+      & ~ [class*=-gallery-] {
+        margin-top: .25rem;
+      }
+    }
+  }
+}

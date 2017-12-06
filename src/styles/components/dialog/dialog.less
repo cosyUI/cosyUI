@@ -1,0 +1,96 @@
+@import "dialog-variable";
+
+.@{css-prefix}dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  background-color: @dialogBackgroundColor;
+  width: 80%;
+  border-radius: 3px;
+  font-size: 16px;
+  user-select: none;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: .3s;
+  z-index: @dialogZindex;
+  &-hd {
+    padding: 20px 20px 0;
+  }
+  &-title {
+    text-align: center;
+    padding-left: 0;
+    margin-bottom: 0;
+    font-size: @dialogTitleFontSize;
+    font-weight: 700;
+    color: @dialogTitleColor;
+    line-height: 20px;
+  }
+  &-bd {
+    padding: 20px 20px 10px;
+    min-height: 70px;
+    font-size: 16px;
+    position: relative;
+  }
+  &-message {
+    color: @dialogMessageColor;
+    margin: 0;
+    text-align: center;
+    line-height: 20px;
+    font-size: @dialogMessageFontSize;
+  }
+  &-input {
+    input {
+      border: 1px solid @dialogBorderColor;
+      border-radius: 0px;
+      padding: 6px 8px;
+      width: 100%;
+      appearance: none;
+      outline: none;
+      font-size: 14px;
+      line-height: 1;
+      color: #666666;
+    }
+    input.invalid {
+      border-color: @dialogColorInvalid;
+      &:focus {
+        border-color: @dialogColorInvalid;
+      }
+    }
+    .@{css-prefix}error-msg {
+      display: block;
+      color: @dialogColorInvalid;
+      font-size: 12px;
+      min-height: 18px;
+      line-height: 18px;
+      margin-top: 2px;
+    }
+  }
+  &-message + &-input {
+    padding-top: 15px;
+  }
+
+  &-ft {
+    position: relative;
+    display: flex;
+    height: @dialogFooterHeight;
+    line-height: @dialogFooterHeight;
+    border-top: 1px solid @dialogBorderColor;
+  }
+  &-btn {
+    position: relative;
+    display: block;
+    line-height: @dialogFooterHeight;
+    text-align: center;
+    background-color: @dialogBackgroundColor;
+    flex: 1;
+    margin: 0;
+    border: 0;
+  }
+  &-cancel {
+    border-right: 1px solid @dialogBorderColor;
+  }
+  &-confirm {
+    color: @dialogConfirmColor;
+  }
+}

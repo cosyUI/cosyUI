@@ -1,0 +1,58 @@
+@import "segment-variable";
+
+@segmentPrefixCls: ~"@{css-prefix}segment";
+
+.@{segmentPrefixCls} {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  &-item {
+    position: relative;
+    width: 100%;
+    height: @segment-height;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: @segment-text-color;
+    font-size: @segment-font-size;
+    line-height: 1;
+    transition: background .2s;
+    border: @segment-border-width solid @segment-border-color;
+    border-left-width: 0;
+    &:first-child {
+      border-left-width: @segment-border-width;
+    }
+    &.is-selected {
+      color: @segment-selected-text-color;
+      background-color: @segment-selected-background-color;
+    }
+    &.is-disabled {
+      border-color: #CDCDCD;
+      background: #e5e5e5;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
+      color: #aaa
+    }
+    .@{css-prefix}reddot {
+      &:after {
+        width: 6px;
+        height: 6px;
+        top: -10px;
+        right: -6px;
+      }
+    }
+  }
+  &-radius {
+    border-radius: @segment-border-radius;
+    .@{segmentPrefixCls}-item {
+      &:first-child {
+        border-radius: @segment-border-radius 0 0 @segment-border-radius;
+      }
+
+      &:last-child {
+        border-radius: 0 @segment-border-radius @segment-border-radius 0;
+      }
+    }
+  }
+}

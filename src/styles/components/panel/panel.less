@@ -1,0 +1,48 @@
+@import "panel-variable";
+
+.@{css-prefix}panel {
+  background-color: @panelBgColor;
+  margin-top: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:before {
+    .setTopLine();
+  }
+  &:after {
+    .setBottomLine();
+  }
+  &-hd,
+  &-ft {
+    padding: @panelHdPadding;
+    color: @panelHdTextColor;
+    font-size: @panelHdFontSize;
+    line-height: 1.5;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &-primary {
+      flex: 1;
+    }
+    &-title {
+      display: block;
+      flex: 1;
+    }
+    &-text {
+      display: block;
+
+    }
+  }
+  &-hd {
+    &:after {
+      .setBottomLine();
+    }
+  }
+  &-ft {
+    &:before {
+      .setTopLine();
+    }
+  }
+}

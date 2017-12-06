@@ -1,0 +1,17 @@
+@import "reddot-variable";
+
+.@{css-prefix}reddot {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: @brand-danger;
+    border-radius: 0.25rem;
+    right: -0.15rem;
+    top: -0.15rem;
+    background-clip: padding-box;
+  }
+}

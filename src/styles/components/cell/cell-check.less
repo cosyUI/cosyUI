@@ -1,0 +1,94 @@
+@import "cell-variable";
+
+.@{css-prefix}check-label {
+  .setTapColor();
+  line-height: 1rem;
+  padding: 0.6rem 0.75rem;
+  &:active {
+    background-color: #ECECEC;
+  }
+  .@{css-prefix}cell-hd {
+    .@{css-prefix}check-core {
+      margin-right: 0.5rem;
+    }
+  }
+  .@{css-prefix}cell-ft {
+    .@{css-prefix}check-core {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+//check
+.@{css-prefix}check-core {
+  .setCheckSize();
+  &.is-selected {
+    background-color: @brand-primary;
+    border-color: @brand-primary;
+  }
+}
+
+//radio
+.@{css-prefix}radio-core {
+  &:after {
+    .setCheckIcon(0.25rem, 0.25rem, 0.4rem, 0.4rem);
+    border-radius: 100%;
+    transform: scale(0);
+  }
+  &.is-selected {
+    &:after {
+      background-color: #fff;
+      transform: scale(1);
+    }
+  }
+}
+
+//checkbox
+.@{css-prefix}checkbox-core {
+  &:after {
+    .setCheckIcon(0.15rem, 0.3rem, 0.3rem, 0.5rem);
+    border: 0.1rem solid transparent;
+    border-left: 0;
+    border-top: 0;
+    transform: rotate(45deg) scale(0);
+  }
+  &.is-selected {
+    &:after {
+      border-color: #fff;
+      transform: rotate(45deg) scale(1);
+    }
+  }
+}
+
+.@{css-prefix}check {
+  /*  position: absolute;
+    left: -9999em;*/
+  display: none;
+  &:checked {
+    & + .@{css-prefix}check-core {
+      background-color: @brand-primary;
+      border-color: @brand-primary;
+    }
+    & + .@{css-prefix}radio-core {
+      &:after {
+        background-color: #fff;
+        transform: scale(1);
+      }
+    }
+    & + .@{css-prefix}checkbox-core {
+      &:after {
+        border-color: #fff;
+        transform: rotate(45deg) scale(1);
+      }
+    }
+  }
+  &[disabled] {
+    & + .@{css-prefix}check-core {
+      background-color: #d9d9d9;
+      border-color: #cccccc;
+    }
+  }
+}
+
+
+

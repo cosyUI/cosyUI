@@ -1,0 +1,151 @@
+@import "media-box-variable";
+
+.@{css-prefix}media-box {
+  padding: @media-list-padding;
+  position: relative;
+  display: flex;
+  align-items: center;
+  &:before {
+    .setTopLine();
+  }
+  &:first-child {
+    &:before {
+      display: none
+    }
+  }
+  a& {
+    color: #000000;
+    .setTapColor();
+    &:active {
+      background-color: #ECECEC;
+    }
+  }
+  &-hd {
+    margin-right: 0.5rem;
+  }
+  &-bd {
+    flex: 1;
+    min-width: 0;
+  }
+  &-ft {
+  }
+}
+
+.@{css-prefix}media-box {
+  p {
+    color: #666666;
+    font-size: .7rem;
+    line-height: 1rem;
+  }
+  .@{css-prefix}media-title {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #333333;
+    line-height: 1rem;
+  }
+
+  .@{css-prefix}media-subtitle {
+    font-size: 0.7rem;
+    color: #333333;
+    line-height: 1rem;
+  }
+
+  .@{css-prefix}media-desc {
+    font-size: 0.7rem;
+    color: #666666;
+    line-height: 1.2;
+  }
+
+  .@{css-prefix}media-tip {
+    font-size: 0.6rem;
+    color: #666666;
+    line-height: 1.2;
+  }
+
+  .@{css-prefix}media-number {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    position: relative;
+    .@{css-prefix}number {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .@{css-prefix}media-after {
+    color: #999999;
+    margin-left: 0.25rem;
+  }
+
+  .@{css-prefix}media-row {
+    display: flex;
+    align-items: center;
+    position: relative;
+    line-height: 1rem;
+    color: #666666;
+    font-size: 0.7rem;
+    &-bd {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  .@{css-prefix}media-info {
+    color: #999999;
+    line-height: 1.2;
+    overflow: hidden;
+    &-item {
+      float: left;
+      padding-right: 0.5rem;
+      &-extra {
+        padding-left: 0.5rem;
+        position: relative;
+        &:after {
+          .setLeftLine();
+        }
+      }
+    }
+  }
+
+  .@{css-prefix}media-list {
+    ul {
+      display: block;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      font-size: 0;
+      text-align: center;
+      li {
+        display: inline-block;
+        overflow: hidden;
+        width: 32.5%;
+        &:first-child {
+          float: left;
+        }
+        &:last-child {
+          float: right;
+        }
+      }
+    }
+    &-img {
+      img {
+        border: none;
+        display: block;
+        width: 100%;
+        transition: opacity ease .3s;
+        pointer-events: none;
+        text-decoration: none;
+        .setTapColor();
+      }
+    }
+  }
+
+  .@{css-prefix}media-title,
+  .@{css-prefix}media-subtitle,
+  .@{css-prefix}media-row {
+    & ~ [class*=-media-] {
+      margin-top: .25rem;
+    }
+  }
+}

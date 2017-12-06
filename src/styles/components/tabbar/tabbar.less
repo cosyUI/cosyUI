@@ -1,0 +1,63 @@
+@import "tabbar-variable";
+
+@tabbarPrefixCls: ~"@{css-prefix}tabbar";
+
+.@{tabbarPrefixCls} {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: @tabbar-height;
+  background-color: @tabbar-bg;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: @zindex-tabbar;
+  &:before {
+    .setTopLine();
+  }
+  &-item {
+    color: @tabbar-color;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: @tabbar-height;
+    width: 100%;
+    &.is-selected {
+      color: @tabbar-color-select;
+    }
+  }
+  &-icon {
+    display: block;
+    position: relative;
+    color: inherit;
+    .@{css-prefix}iconfont {
+      display: inline-block;
+      font-size: @tabbar-font-size-icon;
+      line-height: 1;
+      vertical-align: middle;
+    }
+    .@{css-prefix}badge {
+      position: absolute;
+      left: 22px;
+      top: -2px;
+      transform: translateX(-45%);
+    }
+    .@{css-prefix}badge-dot {
+      top: 0;
+    }
+  }
+  &-label {
+    display: block;
+    font-size: @tabbar-font-size;
+    line-height: 1;
+    text-align: center;
+  }
+  &-icon + &-label {
+    margin-top: 3px;
+    font-size: 12px;
+  }
+}

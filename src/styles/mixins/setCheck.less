@@ -1,0 +1,20 @@
+.setCheckSize() {
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 100%;
+  border: 1px solid #ccc;
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+}
+
+.setCheckIcon(@top,@left,@width,@height) {
+  content: " ";
+  top: @top;
+  left: @left;
+  position: absolute;
+  width: @width;
+  height: @height;
+  transition: transform .2s;
+}

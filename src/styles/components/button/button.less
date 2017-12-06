@@ -1,0 +1,93 @@
+@import "button-variable";
+
+@btnPrefixCls: ~"@{css-prefix}btn";
+
+.@{btnPrefixCls} {
+  display: inline-block;
+  outline: 0;
+  -webkit-appearance: none;
+  padding: 0 15px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  .button-size(@button-height, @button-font-size);
+
+  // default
+  color: #000;
+  background-color: #fff;
+
+  & > [class*=-iconfont] {
+    display: inline-block;
+    line-height: 1;
+    font-size: 24px;
+    vertical-align: top;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 5px;
+  }
+
+  &:active,
+  &&-active {
+    background-color: darken(#fff, 10%);
+  }
+
+  &&-disabled,
+  &[disabled] {
+    color: fade(#000, 30%);
+    opacity: 0.6;
+  }
+
+  // Alternate buttons
+  &-default {
+    .button-variant(@button-default-color, @button-default-fill, #e6e6e6);
+  }
+  &-primary {
+    .button-variant(@button-primary-color, @button-primary-fill, @button-primary-fill);
+  }
+  // Success appears as green
+  &-success {
+    .button-variant(@button-success-color, @button-success-fill, @button-success-fill);
+  }
+  // Info appears as blue-green
+  &-info {
+    .button-variant(@button-info-color, @button-info-fill, @button-info-fill);
+  }
+  // Warning appears as orange
+  &-warning {
+    .button-variant(@button-warning-color, @button-warning-fill, @button-warning-fill);
+  }
+  // Danger and error appear as red
+  &-danger {
+    .button-variant(@button-danger-color, @button-danger-fill, @button-danger-fill);
+  }
+  &-ghost {
+    .button-variant(@btn-ghost-color, @btn-ghost-fill, @btn-ghost-color);
+  }
+
+  // Button Sizes
+  // --------------------------------------------------
+
+  &-small {
+    // line-height: ensure proper height of button next to small input
+    .button-size(@button-height-small, @button-font-size-small);
+  }
+
+  // Block button
+  // --------------------------------------------------
+
+  &-block {
+    display: block;
+    padding: 0;
+    // Vertically space out multiple block buttons
+    & + & {
+      margin-top: 5px;
+    }
+  }
+
+  //Button Radius
+  &-radius {
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,126 @@
+@import "search-variable";
+
+.@{css-prefix}search-bar {
+  position: relative;
+  padding: 8px 10px;
+  display: flex;
+  background-color: #EFEFF4;
+  &:before {
+    .setTopLine();
+  }
+  &:after {
+    .setBottomLine();
+  }
+  &-form {
+    position: relative;
+    flex: auto;
+    background-color: #EFEFF4;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 200%;
+      height: 200%;
+      transform: scale(.5);
+      transform-origin: 0 0;
+      border-radius: 10px;
+      border: 1px solid #E6E6EA;
+      background-color: #FFFFFF;
+    }
+  }
+  &-focusing {
+    .@{css-prefix}search-bar-cancel {
+      display: block;
+    }
+    .@{css-prefix}search-bar-label {
+      display: none;
+    }
+  }
+}
+
+.@{css-prefix}search-bar-box {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  .@{css-prefix}search-bar-input {
+    padding: 6px 0;
+    width: 100%;
+    border: 0;
+    font-size: 14px;
+    line-height: 1;
+    box-sizing: content-box;
+    background: transparent;
+    &:focus {
+      outline: none;
+    }
+  }
+  .@{css-prefix}search-bar-icon {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    line-height: 28px;
+    text-align: left;
+    padding-right: 5px;
+  }
+  .@{css-prefix}search-bar-clear {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 10px;
+    line-height: 28px;
+  }
+}
+
+.@{css-prefix}search-bar-label {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  z-index: 2;
+  border-radius: 3px;
+  text-align: center;
+  color: #9B9B9B;
+  background: #FFFFFF;
+  > span {
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: top;
+    line-height: 1;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .@{css-prefix}search-bar-icon {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: top;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 0px;
+  }
+}
+
+.@{css-prefix}search-bar-cancel {
+  display: none;
+  margin-left: 10px;
+  line-height: 28px;
+  color: @brand-primary;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.@{css-prefix}search-bar-result {
+  margin-top: 0;
+  font-size: 14px;
+  display: none;
+  .@{css-prefix}cell-bd {
+    padding: 0px 0px 0px 10px;
+    color: #666666;
+  }
+}

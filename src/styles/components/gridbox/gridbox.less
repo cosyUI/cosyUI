@@ -1,0 +1,54 @@
+@import "gridbox-variable";
+
+.@{css-prefix}grid {
+  position: relative;
+  overflow: hidden;
+  &-item {
+    position: relative;
+    float: left;
+    padding: @gridItemPadding;
+    &:before {
+      .setRightLine();
+    }
+    &:after {
+      .setBottomLine();
+    }
+
+    &:active {
+      background-color: @gridItemActiveBg;
+    }
+  }
+  &-icon {
+    display: block;
+    margin: 0 auto;
+    width: @gridIconWidth;
+    text-align: center;
+    color: @gridIconFontColor;
+    position: relative;
+    & [class*=-badge] {
+      position: absolute;
+      top: -0.25rem;
+      right: -0.25rem;
+    }
+    & [class*=-badge-dot] {
+      top: -0.15rem;
+      right: -0.1rem;
+    }
+    & [class*=-iconfont] {
+      display: inline-block;
+      font-size: @gridIconFontSize;
+      line-height: 1;
+      vertical-align: middle;
+    }
+    & + .@{css-prefix}grid-label {
+      margin-top: 0.5rem;
+    }
+  }
+  &-label {
+    display: block;
+    text-align: center;
+    color: @gridLabelFontColor;
+    font-size: @gridLabelFontSize;
+    .ellipsis();
+  }
+}

@@ -1,0 +1,34 @@
+@import "cell-variable";
+
+.@{css-prefix}cell-access {
+  .setTapColor();
+  color: inherit;
+  &:active {
+    background-color: #ECECEC;
+  }
+  .@{css-prefix}cell-ft {
+    padding-right: 0.75rem;
+    position: relative;
+    &:after {
+      content: " ";
+      .setArrow(right, @cellAccessSize, @cellAccessColor, @cellAccessBorderSize);
+      position: absolute;
+      top: 50%;
+      margin-top: -@cellAccessSize/2;
+      right: @cellAccessBorderSize;
+    }
+  }
+}
+
+.@{css-prefix}cell-link {
+  color: inherit;
+  font-size: 0.7rem;
+  &:first-child {
+    &:before {
+      display: block;
+    }
+  }
+}
+
+
+

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>Flex</title>
+  <link rel="stylesheet" href="../../styles/index.css"/>
+  <style>
+    body {
+      background-color: #f5f5f9;
+    }
+
+    .flex-container {
+      margin: 0 15px;
+    }
+
+    .sub-title {
+      color: #888;
+      font-size: 14px;
+      padding: 30px 0 18px 0;
+    }
+
+    .inline {
+      width: 80px !important;
+      margin: 9px 9px 9px 0;
+    }
+
+    .small {
+      height: 20px!important;
+      line-height: 20px!important;
+    }
+  </style>
+</head>
+<body>
+<div class="cyui-page-tab">
+  <div class="cyui-page-wrap">
+    <div class="flex-container">
+      <div class="sub-title">Basic</div>
+      <div class="cyui-flexbox cyui-flexbox-align-center" style="margin-bottom: 10px;">
+        <div class="cyui-flexbox-item" style="margin-right: 10px;">
+          <div
+            style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+            Item
+          </div>
+        </div>
+        <div class="cyui-flexbox-item">
+          <div
+            style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+            Item
+          </div>
+        </div>
+      </div>
+      <div class="cyui-flexbox cyui-flexbox-align-center" style="margin-bottom: 10px;">
+        <div class="cyui-flexbox-item" style="margin-right: 10px;">
+          <div
+            style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+            Item
+          </div>
+        </div>
+        <div class="cyui-flexbox-item" style="margin-right: 10px;">
+          <div
+            style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+            Item
+          </div>
+        </div>
+        <div class="cyui-flexbox-item">
+          <div
+            style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+            Item
+          </div>
+        </div>
+      </div>
+      <div class="cyui-flexbox cyui-flexbox-align-center">
+        <div class="cyui-flexbox-item" style="margin-right: 10px;">
+          <div
+            style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+            Item
+          </div>
+        </div>
+        <div class="cyui-flexbox-item" style="margin-right: 10px;">
+          <div
+            style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+            Item
+          </div>
+        </div>
+        <div class="cyui-flexbox-item" style="margin-right: 10px;">
+          <div
+            style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+            Item
+          </div>
+        </div>
+        <div class="cyui-flexbox-item">
+          <div
+            style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+            Item
+          </div>
+        </div>
+      </div>
+      <div class="sub-title">Wrap</div>
+      <div class="cyui-flexbox cyui-flexbox-wrap cyui-flexbox-align-center" style="margin-bottom: 10px;">
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+      </div>
+      <div class="sub-title">Align</div>
+      <div class="cyui-flexbox cyui-flexbox-justify-center cyui-flexbox-align-center" style="margin-bottom: 10px;">
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+      </div>
+      <div class="cyui-flexbox cyui-flexbox-justify-end cyui-flexbox-align-center" style="margin-bottom: 10px;">
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+      </div>
+      <div class="cyui-flexbox cyui-flexbox-justify-between cyui-flexbox-align-center" style="margin-bottom: 10px;">
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+      </div>
+      <div class="cyui-flexbox cyui-flexbox-align-start" style="margin-bottom: 10px;">
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+        <div class="inline small"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+      </div>
+      <div class="cyui-flexbox cyui-flexbox-align-end" style="margin-bottom: 10px;">
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+        <div class="inline small"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+      </div>
+      <div class="cyui-flexbox cyui-flexbox-align-baseline" style="margin-bottom: 10px;">
+        <div class="inline"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+        <div class="inline small"
+             style="background-color: rgb(235, 235, 239);color: rgb(187, 187, 187);text-align: center;height: 30px;line-height: 30px;width: 100%;">
+          Item
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cyui-tabbar">
+  </div>
+</div>
+</body>
+</html>

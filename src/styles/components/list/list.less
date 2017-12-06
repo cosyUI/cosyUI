@@ -1,0 +1,154 @@
+@import "list-variable";
+
+@listPrefixCls: ~"@{css-prefix}list";
+
+.@{listPrefixCls} {
+
+}
+
+.@{listPrefixCls}-item {
+  position: relative;
+  display: flex;
+  padding: 0 0;
+  padding-left: @h-spacing-lg;
+  padding-right: @h-spacing-lg;
+  min-height: @list-item-height;
+  background-color: @fill-base;
+  vertical-align: middle;
+  overflow: hidden;
+  transition: background-color 200ms;
+  align-items: center;
+
+  &.@{listPrefixCls}-item-top {
+    .@{listPrefixCls}-line {
+      align-items: flex-start;
+
+      .@{listPrefixCls}-arrow {
+        margin-top: 2px;
+      }
+    }
+  }
+
+  &.@{listPrefixCls}-item-middle {
+    .@{listPrefixCls}-line {
+      align-items: center;
+    }
+  }
+
+  &.@{listPrefixCls}-item-bottom {
+    .@{listPrefixCls}-line {
+      align-items: flex-end;
+    }
+  }
+
+  img {
+    width: @icon-size-md;
+    height: @icon-size-md;
+    vertical-align: middle;
+  }
+
+  /* list左图片显示*/
+  .@{listPrefixCls}-thumb {
+    &:first-child {
+      margin-right: @h-spacing-lg;
+    }
+
+    &:last-child {
+      margin-left: @h-spacing-md;
+    }
+  }
+
+  .@{listPrefixCls}-line {
+    position: relative;
+    display: flex;
+    flex: 1;
+    align-self: stretch;
+    min-height: @list-item-height;
+    overflow: hidden;
+  }
+
+  /* list左侧主内容 */
+  .@{listPrefixCls}-content {
+    flex: 1;
+    color: @color-text-base;
+    font-size: @font-size-heading;
+    line-height: @line-height-paragraph;
+    text-align: left;
+    .ellipsis();
+
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  /* list 右侧补充内容 */
+  .@{listPrefixCls}-extra {
+    flex-basis: 36%;
+    color: @color-text-caption;
+    font-size: @font-size-caption;
+    line-height: @line-height-paragraph;
+    text-align: right;
+    .ellipsis();
+
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .@{listPrefixCls}-title {
+    .ellipsis();
+  }
+
+  /* 辅助性文字*/
+  .@{listPrefixCls}-brief {
+    color: @color-text-caption;
+    font-size: @font-size-subhead;
+    line-height: @line-height-paragraph;
+    margin-top: @v-spacing-sm;
+    .ellipsis();
+  }
+
+  /* list右侧箭头*/
+  .@{listPrefixCls}-arrow {
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin-left: @h-spacing-md;
+    position: relative;
+    visibility: hidden;
+
+    &-horizontal {
+      visibility: visible;
+      &:after {
+        content: " ";
+        .setArrow(right, 10px, #C8C8CD, 2px);
+        position: absolute;
+        top: 50%;
+        right: 2px;
+        margin-top: -5px;
+      }
+    }
+
+    &-vertical {
+      visibility: visible;
+      &:after {
+        content: " ";
+        .setArrow(down, 10px, #C8C8CD, 2px);
+        position: absolute;
+        top: 50%;
+        right: 2px;
+        margin-top: -8px;
+      }
+    }
+
+    &-vertical-up {
+      visibility: visible;
+      &:after {
+        content: " ";
+        .setArrow(top, 10px, #C8C8CD, 2px);
+        position: absolute;
+        top: 50%;
+        right: 2px;
+        margin-top: -2px;
+      }
+    }
+  }
+}

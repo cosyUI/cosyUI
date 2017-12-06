@@ -1,0 +1,71 @@
+@import "badge-variable";
+
+@badgePrefixCls: ~"@{css-prefix}badge";
+
+.@{badgePrefixCls} {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  &-text {
+    position: absolute;
+    top: -6px;
+    height: @badge-height;
+    line-height: @badge-height;
+    min-width: @badge-height;
+    border-radius: @badge-height/2;
+    padding: 0 @badge-padding-vertical;
+    text-align: center;
+    font-size: @badge-font-size;
+    color: @header-text-color;
+    background-color: @header-bg-color;
+    white-space: nowrap;
+    transform: translateX(-45%);
+    transform-origin: -10% center;
+    z-index: 10;
+    &&-square {
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+    &&-hot {
+      background-color: #f96268;
+    }
+    &&-green {
+      background-color: #21B68A;
+    }
+    &&-yellow {
+      background-color: #F19736;
+    }
+    &&-ghost {
+      background-color: #FFFFFF;
+      color: #ff5b05;
+      border: 1px solid #ff5b05;
+      line-height: 16px;
+    }
+  }
+  &-dot {
+    position: absolute;
+    top: -@badge-dot-width/2;
+    transform: translateX(-50%);
+    transform-origin: 0 center;
+    height: @badge-dot-width;
+    width: @badge-dot-width;
+    border-radius: 100%;
+    background: @badge-bg-color;
+    z-index: 10;
+
+    &-large {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  &-relative &-text,
+  &-relative &-dot {
+    position: relative;
+    top: auto;
+    display: block;
+    transform: translateX(0);
+  }
+}
+

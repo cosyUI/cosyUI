@@ -1,0 +1,57 @@
+//cyui-page-tab
+.@{css-prefix}page-tab {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  .@{css-prefix}page-wrap {
+    overflow: auto;
+    height: 100%;
+    padding-bottom: 100px;
+  }
+  .@{css-prefix}page-tabbar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: @zindex-tabbar;
+  }
+}
+
+//ellipsis
+.@{css-prefix}ellipsis {
+  .ellipsis();
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.@{css-prefix}ellipsis-2 {
+  .ellipsisLn(2);
+}
+
+//border
+.@{css-prefix}1px-t {
+  position: relative;
+  &:after {
+    .setTopLine()
+  }
+}
+
+.@{css-prefix}1px-r {
+  position: relative;
+  &:after {
+    .setRightLine()
+  }
+}
+
+.@{css-prefix}1px-b {
+  position: relative;
+  &:after {
+    .setBottomLine()
+  }
+}
+
+.@{css-prefix}1px-l {
+  position: relative;
+  &:after {
+    .setLeftLine()
+  }
+}

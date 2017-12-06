@@ -1,0 +1,49 @@
+@import "actionsheet-variable";
+
+.@{css-prefix}actionsheet {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  transform: translate(0, 100%);
+  width: 100%;
+  backface-visibility: hidden; //隐藏被旋转的元素的背面
+  transition: transform .3s ease-out;
+  z-index: @actionsheetZindex;
+  background-color: @bgColorDefault;
+}
+
+.@{css-prefix}actionsheet-menu {
+  background-color: #FFFFFF;
+}
+
+.@{css-prefix}actionsheet-action {
+  margin-top: 0.25rem;
+  background-color: #FFFFFF;
+}
+
+.@{css-prefix}actionsheet-item {
+  display: block;
+  width: 100%;
+  line-height: @actionsheetHeight;
+  text-align: center;
+  font-size: @actionsheetFontSize;
+  padding: 0.5rem 0;
+  color: @actionsheetTextColor;
+  position: relative;
+  &:before {
+    .setTopLine();
+  }
+  &:active {
+    background-color: @actionsheetActiveColor;
+  }
+  &:first-child {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+//actionSheet aniamtion
+.@{css-prefix}actionsheet-toggle {
+  transform: translate(0, 0);
+}

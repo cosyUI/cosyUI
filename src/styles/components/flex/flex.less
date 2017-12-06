@@ -1,0 +1,118 @@
+@import "flex-variable";
+
+@flexPrefixCls: ~"@{css-prefix}flexbox";
+
+.@{flexPrefixCls} {
+  text-align: left;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+
+  &&-dir-row {
+    flex-direction: row;
+  }
+
+  &&-dir-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &&-dir-column {
+    flex-direction: column;
+  }
+
+  &&-dir-column-reverse {
+    flex-direction: column-reverse;
+  }
+
+  // flex容器为单行
+  &&-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  // flex容器为多行
+  &&-wrap {
+    flex-wrap: wrap;
+  }
+
+  // 反转wrap排行
+  &&-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+  // x轴原点
+  &&-justify-start {
+    justify-content: flex-start;
+  }
+
+  // x轴居中
+  &&-justify-center {
+    justify-content: center;
+  }
+
+  // x轴反方向
+  &&-justify-end {
+    justify-content: flex-end;
+  }
+
+  // x轴平分
+  &&-justify-between {
+    justify-content: space-between;
+  }
+
+  // x轴有间隔地平分
+  &&-justify-around {
+    justify-content: space-around;
+  }
+
+  // 顶部对齐
+  &&-align-start {
+    align-items: flex-start;
+  }
+
+  // 居中对齐
+  &&-align-center {
+    align-items: center;
+  }
+
+  // 底部对齐
+  &&-align-end {
+    align-items: flex-end;
+  }
+
+  &&-align-stretch {
+    align-items: stretch;
+  }
+
+  &&-align-baseline {
+    align-items: baseline;
+  }
+
+  &&-align-content-start {
+    align-content: flex-start;
+  }
+
+  &&-align-content-end {
+    align-content: flex-end;
+  }
+
+  &&-align-content-center {
+    align-content: center;
+  }
+
+  &&-align-content-between {
+    align-content: space-between;
+  }
+
+  &&-align-content-around {
+    align-content: space-around;
+  }
+
+  &&-align-content-stretch {
+    align-content: stretch;
+  }
+
+  & &-item {
+    flex: 1;
+    min-width: 0;
+  }
+}

@@ -1,0 +1,145 @@
+@import "cell-variable";
+
+@cellPrefixCls: ~"@{css-prefix}list";
+/*
+z-index:
+0: .cyui-swipe-btn
+1: .cyui-cell-swipe .cyui-cell-wrapper
+2: .cyui-cells、.cyui-cell、.cyui-cell-swipe的1px线
+*/
+
+.@{css-prefix}cells {
+  background-color: @cellsBg;
+  line-height: @cellLineHeight;
+  font-size: @cellFontSize;
+  overflow: hidden;
+  position: relative;
+  &:before {
+    .setTopLine();
+    z-index: 2;
+  }
+  &:after {
+    .setBottomLine();
+    z-index: 2;
+  }
+}
+
+.@{css-prefix}cells-title {
+  padding: 15px 15px 9px 15px;
+  font-size: 14px;
+  color: #888;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.@{css-prefix}cells-tips {
+  padding: 9px 15px 15px 15px;
+  font-size: 14px;
+  color: #888;
+}
+
+.@{css-prefix}cell {
+  position: relative;
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 44px;
+  background-color: @cellBg;
+  vertical-align: middle;
+  overflow: hidden;
+  transition: background-color 200ms;
+  align-items: center;
+
+  &:before {
+    .setTopLine();
+    z-index: 2;
+  }
+  &:first-child {
+    &:before {
+      display: none;
+    }
+  }
+  &-primary {
+    align-items: flex-start;
+  }
+  &-bd {
+    flex: 1;
+    min-width: 0;
+  }
+  &-ft {
+    text-align: right;
+    color: @cellTextColor;
+  }
+
+  /* 缩略图（thumb）*/
+  .@{css-prefix}cell-thumb {
+    line-height: 1;
+    &:first-child {
+      margin-right: @h-spacing-lg;
+    }
+    &:last-child {
+      margin-left: @h-spacing-md;
+    }
+    img {
+      width: @icon-size-md;
+      height: @icon-size-md;
+      vertical-align: middle;
+    }
+  }
+
+  /* list左侧主内容*/
+  .@{css-prefix}cell-content {
+    flex: 1;
+    color: @color-text-base;
+    font-size: @font-size-heading;
+    line-height: @line-height-paragraph;
+    text-align: left;
+
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  /* list右补充内容*/
+  .@{css-prefix}cell-extra {
+    flex-basis: 36%;
+    color: @color-text-caption;
+    font-size: @font-size-caption;
+    line-height: @line-height-paragraph;
+    text-align: right;
+    .ellipsis();
+
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .@{css-prefix}cell-title {
+    .ellipsis();
+  }
+
+  /* 辅助性文字*/
+  .@{css-prefix}cell-brief {
+    color: @color-text-caption;
+    font-size: @font-size-subhead;
+    line-height: @line-height-paragraph;
+    margin-top: @v-spacing-sm;
+  }
+
+  &-multiple {
+    padding: 12.5px @h-spacing-lg 12.5px @h-spacing-lg;
+
+    .@{css-prefix}cell-content {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .@{css-prefix}cell-extra {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+
+
+

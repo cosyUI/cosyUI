@@ -1,0 +1,45 @@
+@import "footer-variable";
+
+.@{css-prefix}footer {
+  color: @footerDefaultColor;
+  font-size: @footerDefaultFontSize;
+  text-align: center;
+  &-miscs {
+    padding: @footerMiscsPadding;
+    font-size: 0.6rem;
+    padding-top: 0.2rem;
+    p {
+      margin-top: 0.25rem;
+    }
+  }
+  &-links {
+    font-size: 0;
+  }
+  &-link {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.3rem;
+    position: relative;
+    font-size: 0.7rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #333333;
+    &:before {
+      .setLeftLine(@borderSize:0.2rem ,@borderType:solid , @borderColor: #999);
+      left: -0.35rem;
+      top: 0;
+      bottom: 0;
+    }
+    &:first-child {
+      &:before {
+        display: none;
+      }
+    }
+  }
+  &-fixed-bottom {
+    position: fixed;
+    bottom: 0.5rem;
+    left: 0;
+    right: 0;
+  }
+}
