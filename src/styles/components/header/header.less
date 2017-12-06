@@ -4,17 +4,17 @@
 
 .@{headerPrefixCls} {
   position: relative;
-  background-color: @header-bg-color;
+  background-color: @header-bg;
   height: @header-height;
   line-height: @header-height;
-  padding: @header-padding-base;
-  color: @header-text-color;
+  padding: @header-padding;
+  color: @header-color;
   font-size: @header-font-size;
   text-align: center;
   white-space: nowrap;
   display: flex;
   align-items: center;
-  z-index: @zindex-header;
+  z-index: @header-zindex;
   &-title {
     .ellipsis();
     font-size: @header-title-font-size;
@@ -36,9 +36,9 @@
       padding-right: 5px;
       &:after {
         content: " ";
-        .setArrow(left, 10px, @header-text-color, 2px);
+        .setArrow(left, 10px, @header-color, 2px);
         position: relative;
-        top: 0px;
+        top: 0;
         left: 2px;
       }
     }
@@ -49,12 +49,9 @@
   &-btn {
     position: relative;
     display: block;
-    line-height: 1.5;
     text-align: center;
     color: inherit;
-    font-size: 14px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    font-size: @header-font-size;
     min-width: 30px;
     .@{css-prefix}iconfont {
       line-height: 1;
@@ -79,12 +76,12 @@
       font-size: 18px;
     }
     .@{css-prefix}iconfont + .@{headerPrefixCls}-btn-text {
-      margin-left: 0px;
+      margin-left: 0;
       font-size: 12px;
     }
   }
   /* 图表 文字 水平 Horizontal*/
-  &-level {
+  &-horizontal {
     .@{css-prefix}iconfont {
       font-size: 20px;
     }
@@ -92,7 +89,7 @@
   a {
     &:hover,
     &:active {
-      color: @header-text-color;
+      color: @header-color;
     }
   }
 }

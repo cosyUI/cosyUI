@@ -12,17 +12,17 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  z-index: @zindex-tabbar;
+  z-index: @tabbar-zindex;
   &:before {
     .setTopLine();
   }
   &-item {
-    color: @tabbar-color;
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: @tabbar-color;
     text-align: center;
     height: @tabbar-height;
     width: 100%;
@@ -40,14 +40,22 @@
       line-height: 1;
       vertical-align: middle;
     }
-    .@{css-prefix}badge {
-      position: absolute;
-      left: 22px;
-      top: -2px;
-      transform: translateX(-45%);
+    &.@{css-prefix}badge {
+      display: block;
+      :last-child {
+        margin-top: 4px;
+        left: @tabbar-font-size-icon;
+      }
     }
-    .@{css-prefix}badge-dot {
-      top: 0;
+    &-just {
+      .@{css-prefix}iconfont {
+        font-size: 32px;
+      }
+      &.@{css-prefix}badge {
+        :last-child {
+          left: 28px;
+        }
+      }
     }
   }
   &-label {
