@@ -1,15 +1,4 @@
 # CosyUI
-一款适合移动端开发的UI框架
-
-##开发步骤
-npm install
-
-npm run start
-
-##说明
-
-
-# CosyUI
 
 一款适合移动端开发的纯静态UI框架
 
