@@ -1,8 +1,8 @@
 @import "footbar-variable";
 
-@btmPrefixCls: ~"@{css-prefix}footbar";
+@footbarPrefixCls: ~"@{css-prefix}footbar";
 
-.@{btmPrefixCls} {
+.@{footbarPrefixCls} {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -16,7 +16,7 @@
   &:before {
     .setTopLine();
   }
-  &-item {
+  & &-item {
     color: @footbar-color;
     flex: 1;
     display: block;
@@ -35,25 +35,19 @@
       width: 58px;
       min-width: 40px;
       height: @footbar-height;
-      .@{css-prefix}tabbar-icon {
-        &-text {
-          font-size: 16px;
-          line-height: 1;
-          vertical-align: middle;
-        }
-      }
-      &.@{btmPrefixCls}-check {
+      &.@{footbarPrefixCls}-check {
         width: auto;
         padding-left: 10px;
         .@{css-prefix}tabbar-icon {
-          .@{css-prefix}iconfont {
-            font-size: 28px;
+          &-text {
+            font-size: 16px;
+            vertical-align: middle;
           }
         }
       }
     }
   }
-  &-btns {
+  & &-btns {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,13 +58,12 @@
       align-items: center;
       width: @footbar-btn-width;
       height: @footbar-height;
-      padding: @footbar-btn-padding;
+      line-height: @footbar-height - 2px;
       font-size: @footbar-btn-font-size;
-      border-width: 0;
       margin: 0;
     }
   }
-  &-info {
+  & &-info {
     text-align: left;
     padding-left: 15px;
     & p {
