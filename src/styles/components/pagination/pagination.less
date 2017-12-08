@@ -1,0 +1,23 @@
+@import "pagination-variable";
+
+@paginationPrefixCli: ~"@{css-prefix}pagination";
+
+.@{paginationPrefixCli} {
+  &-wrap {
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+    .is-selected {
+      color: @brand-primary;
+    }
+  }
+  &-btn {
+    text-align: center;
+    &-prev {
+      text-align: left;
+    }
+    &-next {
+      text-align: right;
+    }
+  }
+}
