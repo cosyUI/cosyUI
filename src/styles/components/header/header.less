@@ -4,7 +4,7 @@
 
 .@{headerPrefixCls} {
   position: relative;
-  background-color: @header-bg;
+  background-color: @header-fill;
   height: @header-height;
   line-height: @header-height;
   padding: @header-padding;
@@ -18,7 +18,6 @@
   &-title {
     .ellipsis();
     font-size: @header-title-font-size;
-    font-weight: normal;
     flex: 1;
     height: inherit;
   }
@@ -33,13 +32,13 @@
   &-left {
     .left-arrow {
       display: block;
-      padding-right: 5px;
+      padding-right: @header-left-arrow-padding-right;
       &:after {
         content: " ";
-        .setArrow(left, 10px, @header-color, 2px);
+        .setArrow(left, @header-left-arrow-size, @header-left-arrow-color, @header-left-arrow-width);
         position: relative;
         top: 0;
-        left: 2px;
+        left: @header-left-arrow-width;
       }
     }
   }
@@ -52,18 +51,18 @@
     text-align: center;
     color: inherit;
     font-size: @header-font-size;
-    min-width: 30px;
+    min-width: @header-btn-width;
     .@{css-prefix}iconfont {
       line-height: 1;
       display: inline-block;
-      font-size: 24px;
+      font-size: @header-iconfont-font-size;
       vertical-align: middle;
     }
     .@{css-prefix}iconfont + .@{headerPrefixCls}-btn-text {
       margin-left: 2px;
     }
     & + & {
-      padding-left: 5px;
+      padding-left: @header-btn-padding-left;
     }
   }
   /* 图表 文字 垂直 Vertical*/
@@ -73,17 +72,17 @@
     padding-bottom: 0;
     .@{css-prefix}iconfont {
       display: block;
-      font-size: 18px;
+      font-size: @header-vertical-iconfont-font-size;
     }
     .@{css-prefix}iconfont + .@{headerPrefixCls}-btn-text {
       margin-left: 0;
-      font-size: 12px;
+      font-size: @header-vertical-text-font-size;
     }
   }
   /* 图表 文字 水平 Horizontal*/
   &-horizontal {
     .@{css-prefix}iconfont {
-      font-size: 20px;
+      font-size: @header-horizontal-iconfont-font-size;
     }
   }
   a {
