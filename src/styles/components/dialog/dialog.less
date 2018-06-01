@@ -1,36 +1,60 @@
 @import "dialog-variable";
 
-.@{css-prefix}dialog {
+@dialogPrefixCls: ~"@{css-prefix}dialog";
+
+.@{dialogPrefixCls} {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
-  background-color: @dialogBackgroundColor;
-  width: 80%;
+  background-color: #fff;
+  width: 270px;
   border-radius: 3px;
-  font-size: 16px;
   user-select: none;
   overflow: hidden;
   backface-visibility: hidden;
   transition: .3s;
-  z-index: @dialogZindex;
-  &-hd {
-    padding: 20px 20px 0;
+  z-index: 5000;
+  &-header {
+    padding: 20px 15px 0;
+  }
+  &-icon {
+    color: #4a4c5b;
+    line-height: 1;
+    text-align: center;
+    .@{css-prefix}iconfont {
+      font-size: 40px;
+    }
   }
   &-title {
+    font-size: 18px;
+    color: #333;
+    line-height: 1;
     text-align: center;
-    padding-left: 0;
-    margin-bottom: 0;
-    font-size: @dialogTitleFontSize;
-    font-weight: 700;
-    color: @dialogTitleColor;
-    line-height: 20px;
   }
-  &-bd {
-    padding: 20px 20px 10px;
-    min-height: 70px;
-    font-size: 16px;
+  &-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    text-align: center;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .@{css-prefix}iconfont {
+      font-size: 20px;
+      display: flex;
+    }
+  }
+  &-body {
     position: relative;
+    padding: 15px 15px 20px;
+    font-size: 16px;
+    color: #888;
+    line-height: 1.5;
   }
   &-message {
     color: @dialogMessageColor;
@@ -67,28 +91,34 @@
     }
   }
   &-message + &-input {
-    padding-top: 15px;
+    padding-top: 10px;
   }
 
-  &-ft {
+  &-btns {
     position: relative;
     display: flex;
-    height: @dialogFooterHeight;
-    line-height: @dialogFooterHeight;
-    border-top: 1px solid @dialogBorderColor;
+    align-items: center;
+    &:before {
+      .setTopLine();
+    }
   }
   &-btn {
     position: relative;
     display: block;
-    line-height: @dialogFooterHeight;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    color: #333;
     text-align: center;
-    background-color: @dialogBackgroundColor;
+    background-color: #fff;
     flex: 1;
     margin: 0;
     border: 0;
   }
   &-cancel {
-    border-right: 1px solid @dialogBorderColor;
+    &:after {
+      .setRightLine();
+    }
   }
   &-confirm {
     color: @dialogConfirmColor;

@@ -1,6 +1,6 @@
 @import "cell-variable";
 
-@cellPrefixCls: ~"@{css-prefix}list";
+@cellPrefixCls: ~"@{css-prefix}cell";
 /*
 z-index:
 0: .cyui-swipe-btn
@@ -39,7 +39,7 @@ z-index:
   color: #888;
 }
 
-.@{css-prefix}cell {
+.@{cellPrefixCls} {
   position: relative;
   display: flex;
   padding-left: 15px;
@@ -51,21 +51,21 @@ z-index:
   transition: background-color 200ms;
   align-items: center;
 
-  &:before {
-    .setTopLine();
-    z-index: 2;
-  }
-  &:first-child {
-    &:before {
-      display: none;
+  &:not(:first-child) {
+    .hairline('top');
+    &::before {
+      left: 15px !important;
+      z-index: 2;
     }
   }
+
   &-primary {
     align-items: flex-start;
   }
   &-bd {
+    position: relative;
     flex: 1;
-    min-width: 0;
+    overflow: hidden;
   }
   &-ft {
     text-align: right;
@@ -73,8 +73,7 @@ z-index:
   }
 
   /* 缩略图（thumb）*/
-  .@{css-prefix}cell-thumb {
-    line-height: 1;
+  .@{cellPrefixCls}-thumb {
     &:first-child {
       margin-right: @h-spacing-lg;
     }
@@ -82,15 +81,15 @@ z-index:
       margin-left: @h-spacing-md;
     }
     img {
+      display: block;
       width: @icon-size-md;
       height: @icon-size-md;
       vertical-align: middle;
     }
   }
 
-  /* list左侧主内容*/
-  .@{css-prefix}cell-content {
-    flex: 1;
+  /* list中间主内容*/
+  .@{cellPrefixCls}-content {
     color: @color-text-base;
     font-size: @font-size-heading;
     line-height: @line-height-paragraph;
@@ -101,7 +100,7 @@ z-index:
   }
 
   /* list右补充内容*/
-  .@{css-prefix}cell-extra {
+  .@{cellPrefixCls}-extra {
     flex-basis: 36%;
     color: @color-text-caption;
     font-size: @font-size-caption;
@@ -113,27 +112,27 @@ z-index:
     padding-bottom: 7px;
   }
 
-  .@{css-prefix}cell-title {
-    .ellipsis();
+  .@{cellPrefixCls}-title {
   }
 
   /* 辅助性文字*/
-  .@{css-prefix}cell-brief {
+  .@{cellPrefixCls}-brief {
     color: @color-text-caption;
     font-size: @font-size-subhead;
     line-height: @line-height-paragraph;
-    margin-top: @v-spacing-sm;
+    margin-top: 6px;
   }
 
   &-multiple {
-    padding: 12.5px @h-spacing-lg 12.5px @h-spacing-lg;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
-    .@{css-prefix}cell-content {
+    .@{cellPrefixCls}-content {
       padding-top: 0;
       padding-bottom: 0;
     }
 
-    .@{css-prefix}cell-extra {
+    .@{cellPrefixCls}-extra {
       padding-top: 0;
       padding-bottom: 0;
     }

@@ -3,58 +3,142 @@
 @listPrefixCls: ~"@{css-prefix}list";
 
 .@{listPrefixCls} {
+  &-header {
+    padding: 15px 15px 10px;
+    font-size: 14px;
+    color: #888;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
+  &-footer {
+    padding: 10px 15px 15px;
+    font-size: 14px;
+    color: #888;
+  }
+
+  &-body {
+    position: relative;
+    background-color: #fff;
+    .hairline('top');
+    .hairline('bottom');
+
+    .@{listPrefixCls}-item {
+      &:not(:first-child) {
+        .hairline('top');
+        /*&::before {
+          left: 15px !important;
+          z-index: 2;
+        }*/
+      }
+    }
+  }
 }
 
 .@{listPrefixCls}-item {
   position: relative;
   display: flex;
-  padding: 0 0;
-  padding-left: @h-spacing-lg;
-  padding-right: @h-spacing-lg;
-  min-height: @list-item-height;
-  background-color: @fill-base;
-  vertical-align: middle;
-  overflow: hidden;
-  transition: background-color 200ms;
   align-items: center;
+  min-height: 44px;
+  padding-left: 15px;
+  overflow: hidden;
+  background-color: #fff;
+  vertical-align: middle;
+  transition: background-color 200ms;
 
-  &.@{listPrefixCls}-item-top {
+  .@{listPrefixCls}-ripple {
+    position: absolute;
+    background: transparent;
+    display: inline-block;
+    overflow: hidden;
+    will-change: box-shadow, transform;
+    transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+    outline: none;
+    cursor: pointer;
+    border-radius: 100%;
+    transform: scale(0);
+
+    &.@{listPrefixCls}-ripple-animate {
+      background-color: hsla(0, 0%, 62%, .2);
+      animation: ripple 1s linear;
+    }
+  }
+
+  &.@{listPrefixCls}-item-error {
     .@{listPrefixCls}-line {
-      align-items: flex-start;
+      .@{listPrefixCls}-extra {
+        color: #f50;
 
-      .@{listPrefixCls}-arrow {
-        margin-top: 2px;
+        .@{listPrefixCls}-brief {
+          color: #f50;
+        }
       }
     }
   }
 
-  &.@{listPrefixCls}-item-middle {
-    .@{listPrefixCls}-line {
-      align-items: center;
-    }
+  &.@{listPrefixCls}-item-active {
+    background-color: #ddd;
   }
 
-  &.@{listPrefixCls}-item-bottom {
+  &.@{listPrefixCls}-disabled {
     .@{listPrefixCls}-line {
-      align-items: flex-end;
+      .@{listPrefixCls}-content,
+      .@{listPrefixCls}-extra {
+        color: #bbb;
+      }
     }
   }
 
   img {
-    width: @icon-size-md;
-    height: @icon-size-md;
+    width: 22px;
+    height: 22px;
     vertical-align: middle;
   }
 
   /* list左图片显示*/
   .@{listPrefixCls}-thumb {
     &:first-child {
-      margin-right: @h-spacing-lg;
+      margin-right: 15px;
     }
 
     &:last-child {
-      margin-left: @h-spacing-md;
+      margin-left: 8px;
+    }
+  }
+
+  /* list label */
+  .@{listPrefixCls}-label {
+    margin-left: 0;
+    margin-right: 5px;
+    color: #000;
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+
+    &.@{listPrefixCls}-label-2 {
+      width: 2 * 17px;
+    }
+
+    &.@{listPrefixCls}-label-3 {
+      width: 3 * 17px;
+    }
+
+    &.@{listPrefixCls}-label-4 {
+      width: 4 * 17px;
+    }
+
+    &.@{listPrefixCls}-label-5 {
+      width: 5 * 17px;
+    }
+
+    &.@{listPrefixCls}-label-6 {
+      width: 6 * 17px;
+    }
+
+    &.@{listPrefixCls}-label-7 {
+      width: 7 * 17px;
     }
   }
 
@@ -62,93 +146,130 @@
     position: relative;
     display: flex;
     flex: 1;
+    align-items: center;
     align-self: stretch;
-    min-height: @list-item-height;
+    padding-right: 15px;
     overflow: hidden;
-  }
 
-  /* list左侧主内容 */
-  .@{listPrefixCls}-content {
-    flex: 1;
-    color: @color-text-base;
-    font-size: @font-size-heading;
-    line-height: @line-height-paragraph;
-    text-align: left;
-    .ellipsis();
+    &.@{listPrefixCls}-top {
+      align-items: flex-start;
+    }
 
-    padding-top: 7px;
-    padding-bottom: 7px;
-  }
+    &.@{listPrefixCls}-bottom {
+      align-items: flex-end;
+    }
 
-  /* list 右侧补充内容 */
-  .@{listPrefixCls}-extra {
-    flex-basis: 36%;
-    color: @color-text-caption;
-    font-size: @font-size-caption;
-    line-height: @line-height-paragraph;
-    text-align: right;
-    .ellipsis();
+    /* list左侧主内容 */
+    .@{listPrefixCls}-content {
+      flex: 1;
+      color: @color-text-base;
+      font-size: @font-size-heading;
+      line-height: @line-height-paragraph;
+      text-align: left;
+      .ellipsis();
 
-    padding-top: 7px;
-    padding-bottom: 7px;
-  }
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
 
-  .@{listPrefixCls}-title {
-    .ellipsis();
-  }
+    /* list 右补充内容 */
+    .@{listPrefixCls}-extra {
+      flex-basis: 36%;
+      color: @color-text-caption;
+      font-size: @font-size-caption;
+      line-height: @line-height-paragraph;
+      text-align: right;
+      .ellipsis();
 
-  /* 辅助性文字*/
-  .@{listPrefixCls}-brief {
-    color: @color-text-caption;
-    font-size: @font-size-subhead;
-    line-height: @line-height-paragraph;
-    margin-top: @v-spacing-sm;
-    .ellipsis();
-  }
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
 
-  /* list右侧箭头*/
-  .@{listPrefixCls}-arrow {
-    display: block;
-    width: 15px;
-    height: 15px;
-    margin-left: @h-spacing-md;
-    position: relative;
-    visibility: hidden;
+    .@{listPrefixCls}-title {
+      .ellipsis();
+    }
 
-    &-horizontal {
-      visibility: visible;
-      &:after {
-        content: " ";
-        .setArrow(right, 10px, #C8C8CD, 2px);
-        position: absolute;
-        top: 50%;
-        right: 2px;
-        margin-top: -5px;
+    /* 辅助性文字*/
+    .@{listPrefixCls}-brief {
+      color: @color-text-caption;
+      font-size: @font-size-subhead;
+      line-height: @line-height-paragraph;
+      margin-top: @v-spacing-sm;
+      .ellipsis();
+
+      & + .@{listPrefixCls}-brief {
+        margin-top: 0;
       }
     }
 
-    &-vertical {
-      visibility: visible;
-      &:after {
-        content: " ";
-        .setArrow(down, 10px, #C8C8CD, 2px);
-        position: absolute;
-        top: 50%;
-        right: 2px;
-        margin-top: -8px;
-      }
-    }
+    /* list右侧箭头*/
+    .@{listPrefixCls}-arrow {
+      position: relative;
+      display: block;
+      width: 16px;
+      height: 16px;
+      margin-left: @h-spacing-md;
+      visibility: hidden;
 
-    &-vertical-up {
-      visibility: visible;
       &:after {
         content: " ";
-        .setArrow(top, 10px, #C8C8CD, 2px);
+        .setArrow(right, 10px, #C8C8CD, 2PX);
         position: absolute;
         top: 50%;
-        right: 2px;
-        margin-top: -2px;
+        left: 50%;
+      }
+
+      &-top {
+        visibility: visible;
+        &:after {
+          transform: translate(-50%, -25%) rotate(-45deg);
+        }
+      }
+
+      &-right {
+        visibility: visible;
+        &:after {
+          transform: translate(-75%, -50%) rotate(45deg);
+        }
+      }
+
+      &-down {
+        visibility: visible;
+        &:after {
+          transform: translate(-50%, -75%) rotate(135deg);
+        }
+      }
+
+      &-left {
+        visibility: visible;
+        &:after {
+          transform: translate(-25%, -50%) rotate(-135deg);
+        }
+      }
+
+    }
+  }
+
+  &.@{listPrefixCls}-multiple {
+    padding: 12.5px 0 12.5px 15px;
+
+    .@{listPrefixCls}-line {
+      .@{listPrefixCls}-content {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .@{listPrefixCls}-extra {
+        padding-top: 0;
+        padding-bottom: 0;
       }
     }
+  }
+}
+
+@keyframes ripple {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
   }
 }

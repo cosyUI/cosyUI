@@ -1,26 +1,28 @@
 @import "cell-variable";
 
-.@{css-prefix}cell-access {
+@cellPrefixCls: ~"@{css-prefix}cell";
+
+.@{cellPrefixCls}-access {
   .setTapColor();
   color: inherit;
   &:active {
     background-color: #ECECEC;
   }
-  .@{css-prefix}cell-ft {
-    padding-right: 0.75rem;
+  .@{cellPrefixCls}-ft {
+    padding-right: 20px;
     position: relative;
     &:after {
       content: " ";
-      .setArrow(right, @cellAccessSize, @cellAccessColor, @cellAccessBorderSize);
+      .setArrow(right, 10px, #C7C7CC, 2PX);
       position: absolute;
       top: 50%;
-      margin-top: -@cellAccessSize/2;
-      right: @cellAccessBorderSize;
+      margin-top: -5px;
+      right: 5px;
     }
   }
 }
 
-.@{css-prefix}cell-link {
+.@{cellPrefixCls}-link {
   color: inherit;
   font-size: 0.7rem;
   &:first-child {

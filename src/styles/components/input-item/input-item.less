@@ -1,0 +1,154 @@
+@import "./input-item-variable.less";
+
+@listPrefixCls: ~"@{css-prefix}list";
+@inputPrefixCls: ~"@{css-prefix}input";
+
+.@{inputPrefixCls}-item {
+
+  .@{listPrefixCls}-label {
+    padding: 2px 0;
+    line-height: 1.2;
+  }
+
+  .@{inputPrefixCls}-control {
+    flex: 1;
+    font-size: 17px;
+
+    .@{inputPrefixCls} {
+      width: 100%;
+      padding: 2px 0;
+      border: 0;
+      outline: none;
+      appearance: none;
+      background-color: transparent;
+      color: #000;
+      font-size: 17px;
+      line-height: 1.2;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: #bbb;
+        line-height: 1.2;
+      }
+
+      &:disabled {
+        color: #bbb;
+        background-color: #fff;
+      }
+
+      &.@{inputPrefixCls}-right {
+        text-align: right;
+      }
+    }
+  }
+
+  .@{inputPrefixCls}-clear {
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+    font-style: normal;
+    color: #fff;
+    background-color: #ccc;
+    background-repeat: no-repeat;
+    .encoded-svg-background('input_item_delete');
+    background-size: 20px auto;
+    background-position: 2px 2px;
+
+    &-active {
+      background-color: @brand-primary;
+    }
+  }
+
+  &.@{inputPrefixCls}-focus {
+    .@{inputPrefixCls}-clear {
+      display: block;
+    }
+  }
+
+  .@{inputPrefixCls}-extra {
+    flex: initial;
+    min-width: 0;
+    max-height: 24px;
+    margin-left: 5px;
+    padding-right: 0;
+    color: #888;
+    font-size: 15px;
+    line-height: 24px;
+    overflow: hidden;
+  }
+
+  .@{inputPrefixCls}-button {
+    display: block;
+    margin-left: 5px;
+    .@{css-prefix}btn {
+      border-radius: 3px;
+      padding: 0;
+      min-width: 85px;
+    }
+  }
+
+  &.@{inputPrefixCls}-disabled {
+    .@{listPrefixCls}-label {
+      color: #bbb;
+    }
+  }
+
+  /* 提示信息 在下面 */
+  &.@{inputPrefixCls}-message {
+    padding: 12px 0 12px 15px;
+    .@{listPrefixCls}-line {
+      align-items: flex-start;
+    }
+    .@{listPrefixCls}-label {
+      padding: 0;
+    }
+    .@{inputPrefixCls}-control {
+      .@{inputPrefixCls} {
+        padding: 0;
+      }
+      .@{inputPrefixCls}-error-msg {
+        margin-top: 5px;
+        font-size: 12px;
+        color: #000;
+        line-height: 20px;
+      }
+    }
+  }
+
+  /* label 隐藏 */
+  &.@{inputPrefixCls}-latent {
+    padding: 25px 0 5px 15px;
+    .@{listPrefixCls}-label {
+      position: absolute;
+      top: 5px;
+      left: 15px;
+      padding: 0;
+      font-size: 14px;
+      line-height: 20px;
+      transition: all .3s ease;
+    }
+  }
+
+  &.@{inputPrefixCls}-error {
+    .@{inputPrefixCls}-control {
+      .@{inputPrefixCls} {
+        color: #f50;
+      }
+      .@{inputPrefixCls}-error-msg {
+        color: #f50;
+      }
+    }
+    .@{inputPrefixCls}-error-icon {
+      width: 20px;
+      height: 20px;
+      margin-left: 5px;
+      color: #f50;
+      .encoded-svg-background('warn');
+
+      background-size: 20px auto;
+    }
+  }
+}

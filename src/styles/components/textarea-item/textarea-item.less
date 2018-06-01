@@ -1,0 +1,107 @@
+@import "./textarea-item-variable.less";
+
+@listPrefixCls: ~"@{css-prefix}list";
+@textareaPrefixCls: ~"@{css-prefix}textarea";
+
+.@{textareaPrefixCls}-item {
+  padding: 10px 0 10px 15px;
+
+  .@{listPrefixCls}-label {
+    align-self: flex-start;
+    line-height: 24px;
+  }
+
+  .@{textareaPrefixCls}-control {
+    flex: 1;
+
+    .@{textareaPrefixCls} {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      outline: none;
+      appearance: none;
+      background-color: transparent;
+      color: #000;
+      font-size: 17px;
+      line-height: 24px;
+      overflow: visible;
+      resize: none;
+      word-break: break-all;
+      word-wrap: break-word;
+
+      &::placeholder {
+        color: #bbb;
+      }
+
+      &:disabled {
+        color: #bbb;
+        background-color: #fff;
+      }
+    }
+    .@{textareaPrefixCls}-count {
+      display: block;
+      color: #bbb;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: right;
+      span {
+        color: #000;
+      }
+    }
+  }
+
+  .@{textareaPrefixCls}-clear {
+    display: none;
+    align-self: flex-start;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    margin-left: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+    font-style: normal;
+    color: #fff;
+    background-color: #ccc;
+    background-repeat: no-repeat;
+    .encoded-svg-background('input_item_delete');
+    background-size: 20px auto;
+    background-position: 2px 2px;
+
+    &-active {
+      background-color: @brand-primary;
+    }
+  }
+
+  &.@{textareaPrefixCls}-focus {
+    .@{textareaPrefixCls}-clear {
+      display: block;
+    }
+  }
+
+  &.@{textareaPrefixCls}-error {
+    .@{textareaPrefixCls}-control {
+      .@{textareaPrefixCls} {
+        color: #f50;
+      }
+    }
+
+    .@{textareaPrefixCls}-error-icon {
+      align-self: flex-start;
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      margin-left: 5px;
+      color: #f50;
+      .encoded-svg-background('warn');
+
+      background-size: 20px auto;
+    }
+  }
+
+  &.@{textareaPrefixCls}-disabled {
+    .@{textareaPrefixCls}-label {
+      color: #bbb;
+    }
+  }
+}

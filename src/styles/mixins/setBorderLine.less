@@ -1,64 +1,64 @@
-.setLine(@borderSize:1px ,@borderType:solid , @borderColor: #e5e5e5) {
-  content: " ";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 200%;
-  border: @borderSize @borderType @borderColor;
-  color: @borderColor;
-  height: 200%;
-  transform-origin: left top;
-  transform: scale(0.5);
-}
-
-.setTopLine(@borderSize:1px ,@borderType:solid , @borderColor: #e5e5e5) {
+.setTopLine(@borderSize:1px, @borderType:solid , @borderColor: #e5e5e5) {
   content: " ";
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   height: 1px;
-  border-top: @borderSize @borderType @borderColor;
+  border-top: @borderSize solid @borderColor;
   color: @borderColor;
   transform-origin: 0 0;
   transform: scaleY(0.5);
 }
 
-.setBottomLine(@borderSize:1px ,@borderType:solid , @borderColor: #e5e5e5) {
+.setBottomLine(@borderSize:1px, @borderType:solid , @borderColor: #e5e5e5) {
   content: " ";
   position: absolute;
   left: 0;
   bottom: 0;
   right: 0;
   height: 1px;
-  border-bottom: @borderSize @borderType @borderColor;
+  border-bottom: @borderSize solid @borderColor;
   color: @borderColor;
   transform-origin: 0 100%;
   transform: scaleY(0.5);
 }
 
-.setLeftLine(@borderSize:1px ,@borderType:solid , @borderColor: #e5e5e5) {
+.setLeftLine(@borderSize:1px, @borderType:solid , @borderColor: #e5e5e5) {
   content: " ";
   position: absolute;
   left: 0;
   top: 0;
   width: 1px;
   bottom: 0;
-  border-left: @borderSize @borderType @borderColor;
+  border-left: @borderSize solid @borderColor;
   color: @borderColor;
   transform-origin: 0 0;
   transform: scaleX(0.5);
 }
 
-.setRightLine(@borderSize:1px ,@borderType:solid , @borderColor: #e5e5e5) {
+.setRightLine(@borderSize:1px, @borderType:solid , @borderColor: #e5e5e5) {
   content: " ";
   position: absolute;
   right: 0;
   top: 0;
   width: 1px;
   bottom: 0;
-  border-right: @borderSize @borderType @borderColor;
+  border-right: @borderSize solid @borderColor;
   color: @borderColor;
   transform-origin: 100% 0;
   transform: scaleX(0.5);
+}
+
+.setLine(@borderSize:1px , @borderColor: #e5e5e5) {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  border: @borderSize solid @borderColor;
+  color: @borderColor;
+  height: 200%;
+  transform-origin: left top;
+  transform: scale(0.5);
 }

@@ -1,0 +1,169 @@
+._hairline(@color, @top, @right, @bottom, @left) {
+  content: '';
+  position: absolute;
+  background-color: @color;
+  display: block;
+  z-index: 1;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+  left: @left;
+}
+
+.hairline(@direction, @width: 1PX, @color: #ddd) when (@direction = 'top') {
+  border-top: @width solid @color;
+
+  html:not([data-scale]) & {
+    @media (min-resolution: 2dppx) {
+      border-top: none;
+
+      &::before {
+        ._hairline(@color, 0, auto, auto, 0);
+        width: 100%;
+        height: @width;
+        transform-origin: 50% 50%;
+        transform: scaleY(0.5);
+
+        @media (min-resolution: 3dppx) {
+          transform: scaleY(0.33);
+        }
+      }
+    }
+  }
+}
+
+.hairline(@direction, @width: 1PX, @color: #ddd) when (@direction = 'right') {
+  border-right: @width solid @color;
+
+  html:not([data-scale]) & {
+    @media (min-resolution: 2dppx) {
+      border-right: none;
+
+      &::after {
+        ._hairline(@color, 0, 0, auto, auto);
+        width: @width;
+        height: 100%;
+        background: @color;
+        transform-origin: 100% 50%;
+        transform: scaleX(0.5);
+
+        @media (min-resolution: 3dppx) {
+          transform: scaleX(0.33);
+        }
+      }
+    }
+  }
+}
+
+.hairline(@direction, @width: 1PX, @color: #ddd) when (@direction = 'bottom') {
+  border-bottom: @width solid @color;
+
+  html:not([data-scale]) & {
+    @media (min-resolution: 2dppx) {
+      border-bottom: none;
+
+      &::after {
+        ._hairline(@color, auto, auto, 0, 0);
+        width: 100%;
+        height: @width;
+        transform-origin: 50% 100%;
+        transform: scaleY(0.5);
+
+        @media (min-resolution: 3dppx) {
+          transform: scaleY(0.33);
+        }
+      }
+    }
+  }
+}
+
+.hairline(@direction, @width: 1PX, @color: #ddd) when (@direction = 'left') {
+  border-left: @width solid @color;
+
+  html:not([data-scale]) & {
+    @media (min-resolution: 2dppx) {
+      border-left: none;
+
+      &::before {
+        ._hairline(@color, 0, auto, auto, 0);
+        width: @width;
+        height: 100%;
+        transform-origin: 100% 50%;
+        transform: scaleX(0.5);
+
+        @media (min-resolution: 3dppx) {
+          transform: scaleX(0.33);
+        }
+      }
+    }
+  }
+}
+
+.hairline(@direction, @width: 1PX, @color: #ddd, @radius: 0) when (@direction = 'all') {
+  border: @width solid @color;
+  border-radius: @radius;
+
+  html:not([data-scale]) & {
+    @media (min-resolution: 2dppx) {
+      position: relative;
+      border: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200%;
+        height: 200%;
+        border: @width solid @color;
+        border-radius: @radius * 2;
+        transform-origin: 0 0;
+        transform: scale(0.5);
+        box-sizing: border-box;
+        pointer-events: none;
+
+        // @media (min-resolution: 3dppx) {
+        //   width: 300%;
+        //   height: 300%;
+        //   border-radius: @radius * 3;
+        //   transform: scale(0.33);
+        // }
+      }
+    }
+  }
+}
+
+.hairline-remove(@position) when (@position = 'right') {
+  border-right: 0;
+  &:after {
+    display: none !important;
+  }
+}
+
+.hairline-remove(@position) when (@position = 'top') {
+  border-top: 0;
+  &:before {
+    display: none !important;
+  }
+}
+
+.hairline-remove(@position) when (@position = 'bottom') {
+  border-bottom: 0;
+  &:after {
+    display: none !important;
+  }
+}
+
+.hairline-remove(@position) when (@position = 'left') {
+  border-left: 0;
+  &:before {
+    display: none !important;
+  }
+}
+
+.hairline-remove(@position) when (@position = 'all') {
+  border: 0;
+  &:before {
+    display: none !important;
+  }
+}

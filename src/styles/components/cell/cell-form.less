@@ -1,9 +1,39 @@
 @import "cell-variable";
 
-.@{css-prefix}label {
+@inputPrefixCls: ~"@{css-prefix}input";
+
+.@{inputPrefixCls}-label {
   display: block;
-  width: @cellLabelWidth;
-  .text_wrap();
+  color: #000;
+  font-size: 17px;
+  margin-right: 5px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &.@{inputPrefixCls}-label-2 {
+    width: 2*17px;
+  }
+
+  &.@{inputPrefixCls}-label-3 {
+    width: 3*17px;
+  }
+
+  &.@{inputPrefixCls}-label-4 {
+    width: 4*17px;
+  }
+
+  &.@{inputPrefixCls}-label-5 {
+    width: 5*17px;
+  }
+
+  &.@{inputPrefixCls}-label-6 {
+    width: 6*17px;
+  }
+
+  &.@{inputPrefixCls}-label-7 {
+    width: 7*17px;
+  }
 }
 
 // input
@@ -13,8 +43,8 @@
   outline: 0;
   -webkit-appearance: none;
   background-color: transparent;
-  font-size: inherit;
-  color: inherit;
+  font-size: 17px;
+  color: #000;
   height: @cellLineHeight*@cellFontSize;
   line-height: @cellLineHeight;
   border-radius: 0;

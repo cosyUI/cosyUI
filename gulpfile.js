@@ -10,6 +10,7 @@ var autoprefixer = require('autoprefixer');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync');
+var svgSprite = require('gulp-svg-sprite');
 
 var clean = require('gulp-clean');//清理文件或文件夹
 var replace = require('gulp-replace-task');//对文件中的字符串进行替换
@@ -70,6 +71,17 @@ gulp.task('build:style', function () {
       path.basename += '.min';
     }))
     .pipe(gulp.dest(dist));
+});
+
+gulp.task('build:svg', function () {
+  return gulp.src('src/styles/icons/*.svg', option)
+    .pipe(svgSprite({
+      mode: {
+        symbol: true // Activate the «symbol» mode
+      }
+    }))
+    .pipe(gulp.dest(dist))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 //拷贝字体库：src/iconfonts到dist/iconfont
@@ -149,7 +161,7 @@ gulp.task('build:html', function () {
     .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('build:page', ['build:iconfonts', 'build:images', 'build:js', 'build:page:style', 'build:html']);
+gulp.task('build:page', ['build:svg', 'build:iconfonts', 'build:images', 'build:js', 'build:page:style', 'build:html']);
 
 gulp.task('clean_release', ['clean'], function () {
   return gulp.start('build:style', 'build:page');
@@ -159,6 +171,7 @@ gulp.task('release', ['build:style', 'build:page']);
 
 gulp.task('watch', ['release'], function () {
   gulp.watch('src/styles/**/*', ['build:style']);
+  gulp.watch('src/styles/icons/**/*', ['build:svg']);
   gulp.watch('src/styles/iconfonts/iconfont/**/*', ['build:iconfonts']);
   gulp.watch('src/example/styles/**/*.less', ['build:page:style']);
   gulp.watch('src/example/images/**/*.?(png|jpg|gif)', ['build:images']);
