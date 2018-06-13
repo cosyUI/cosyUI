@@ -1,0 +1,92 @@
+@import "switch-variable";
+
+@listPrefixCls: ~"@{css-prefix}list";
+@switchPrefixCls: ~"@{css-prefix}switch";
+
+.@{switchPrefixCls} {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  box-sizing: border-box;
+  align-self: center;
+
+  &-core {
+    position: relative;
+    width: 52px;
+    height: 32px;
+    appearance: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 16px;
+    background-color: #d9d9d9;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all .3s;
+    z-index: 0;
+    &:after,
+    &:before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 15px;
+      transition: all .2s;
+      box-sizing: border-box;
+    }
+    &:before {
+      width: 50px;
+      height: 30px;
+      background-color: #fdfdfd;
+      transform: scale(1);
+      z-index: 1;
+    }
+    &:after {
+      width: 30px;
+      height: 30px;
+      background-color: #fff;
+      transform: translateX(0);
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, .21);
+      z-index: 2;
+    }
+  }
+
+  &-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border: none;
+    appearance: none;
+    z-index: 2;
+    box-sizing: border-box;
+
+    &:checked {
+      & + .@{switchPrefixCls}-core {
+        border-color: @brand-primary;
+        background-color: @brand-primary;
+
+        &:before {
+          transform: scale(0);
+        }
+
+        &:after {
+          transform: translateX(20px);
+        }
+      }
+    }
+
+    &:disabled {
+      & + .@{switchPrefixCls}-core {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &.@{switchPrefixCls}-disabled {
+    .@{switchPrefixCls}-core {
+      z-index: 3;
+    }
+  }
+}

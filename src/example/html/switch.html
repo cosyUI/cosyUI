@@ -1,40 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <title>Switch</title>
-    <link rel="stylesheet" href="../../styles/index.css"/>
-    <style>
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>Switch</title>
+  <link rel="stylesheet" href="../../styles/index.css"/>
+  <style>
+  </style>
 </head>
 <body>
 <label class="cyui-switch">
-    <span class="cyui-switch-core is-selected"></span>
+  <input type="checkbox" class="cyui-switch-input">
+  <div class="cyui-switch-core"></div>
 </label>
-<label class="cyui-switch">
-    <input type="checkbox" class="cyui-switch-input">
-    <span class="cyui-switch-core"></span>
+<label class="cyui-switch cyui-switch-disabled">
+  <input type="checkbox" class="cyui-switch-input" checked disabled>
+  <div class="cyui-switch-core"></div>
 </label>
-<label class="cyui-switch">
-    <input type="checkbox" class="cyui-switch-input">
-    <span class="cyui-switch-core"></span>
+<label class="cyui-switch cyui-switch-disabled">
+  <input type="checkbox" class="cyui-switch-input" disabled>
+  <div class="cyui-switch-core"></div>
 </label>
-<div class="cyui-cells-title">开关</div>
-<div class="cyui-cells">
-    <div class="cyui-cell cyui-cell-switch">
-        <div class="cyui-cell-hd">
-        </div>
-        <div class="cyui-cell-bd">
-            <p>选项false</p>
-        </div>
-        <div class="cyui-cell-ft">
-            <label class="cyui-switch">
-                <input type="checkbox" class="cyui-switch-input">
-                <span class="cyui-switch-core"></span>
-            </label>
-        </div>
-    </div>
-</div>
 </body>
 </html>

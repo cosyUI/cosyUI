@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>Stepper</title>
+  <link rel="stylesheet" href="../../styles/index.css"/>
+  <style>
+    body {
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+<div style="height: 100px;"></div>
+<div class="cyui-stepper">
+  <div class="cyui-stepper-minus"></div>
+  <div class="cyui-stepper-number">
+    <input type="number" class="cyui-stepper-input" readonly="readonly" pattern="[0-9]*" value="100">
+  </div>
+  <div class="cyui-stepper-plus"></div>
+</div>
+
+<div class="cyui-stepper">
+  <div class="cyui-stepper-minus cyui-stepper-full"></div>
+  <div class="cyui-stepper-number">
+    <input type="number" class="cyui-stepper-input" readonly="readonly" pattern="[0-9]*" value="100">
+  </div>
+  <div class="cyui-stepper-plus cyui-stepper-full"></div>
+</div>
+
+<div class="cyui-stepper">
+  <div class="cyui-stepper-minus cyui-stepper-full cyui-stepper-disabled"></div>
+  <div class="cyui-stepper-number">
+    <input type="number" class="cyui-stepper-input" readonly="readonly" pattern="[0-9]*" value="100">
+  </div>
+  <div class="cyui-stepper-plus cyui-stepper-full"></div>
+</div>
+
+<div class="cyui-stepper cyui-stepper-round">
+  <div class="cyui-stepper-minus cyui-stepper-disabled"></div>
+  <div class="cyui-stepper-number">
+    <input type="number" class="cyui-stepper-input" readonly="readonly" pattern="[0-9]*" value="100">
+  </div>
+  <div class="cyui-stepper-plus"></div>
+</div>
+
+<div class="cyui-stepper cyui-stepper-round">
+  <div class="cyui-stepper-minus cyui-stepper-full cyui-stepper-disabled"></div>
+  <div class="cyui-stepper-number">
+    <input type="number" class="cyui-stepper-input" readonly="readonly" pattern="[0-9]*" value="100">
+  </div>
+  <div class="cyui-stepper-plus cyui-stepper-full"></div>
+</div>
+
+<div class="cyui-stepper cyui-stepper-border">
+  <div class="cyui-stepper-minus"></div>
+  <div class="cyui-stepper-number">
+    <input type="number" class="cyui-stepper-input" readonly="readonly" pattern="[0-9]*" value="100">
+  </div>
+  <div class="cyui-stepper-plus"></div>
+</div>
+
+</body>
+</html>

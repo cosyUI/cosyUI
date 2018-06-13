@@ -1,14 +1,14 @@
-@import "checkbox-variable";
+@import "radio-variable";
 
 @listPrefixCls: ~"@{css-prefix}list";
-@checkboxPrefixCls: ~"@{css-prefix}checkbox";
+@radioPrefixCls: ~"@{css-prefix}radio";
 
-.@{checkboxPrefixCls}-wrapper {
+.@{radioPrefixCls}-wrapper {
   position: relative;
   display: inline-block;
 }
 
-.@{checkboxPrefixCls} {
+.@{radioPrefixCls} {
   display: inline-block;
   vertical-align: middle;
   &-core {
@@ -24,14 +24,12 @@
     &::after {
       content: " ";
       position: absolute;
-      top: 3px;
-      left: 6px;
-      width: 6px;
-      height: 10px;
-      border: 2px solid transparent;
-      border-left: 0;
-      border-top: 0;
-      transform: rotate(45deg) scale(0);
+      top: 5px;
+      left: 5px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      transform: scale(0);
       transition: transform .2s;
       box-sizing: border-box;
     }
@@ -48,39 +46,39 @@
     border: 0 none;
     appearance: none;
     &:checked {
-      & + .@{checkboxPrefixCls}-core {
+      & + .@{radioPrefixCls}-core {
         border-color: @brand-primary;
         background-color: @brand-primary;
 
         &::after {
-          border-color: #fff;
-          transform: rotate(45deg) scale(1);
+          background-color: #fff;
+          transform: scale(1);
         }
       }
     }
   }
 
-  &.@{checkboxPrefixCls}-checked {
-    .@{checkboxPrefixCls}-core {
+  &.@{radioPrefixCls}-checked {
+    .@{radioPrefixCls}-core {
       border-color: @brand-primary;
       background-color: @brand-primary;
 
       &::after {
-        border-color: #fff;
-        transform: rotate(45deg) scale(1);
+        background-color: #fff;
+        transform: scale(1);
       }
     }
   }
 
-  &.@{checkboxPrefixCls}-disabled {
-    .@{checkboxPrefixCls}-core {
+  &.@{radioPrefixCls}-disabled {
+    .@{radioPrefixCls}-core {
       background-color: #d9d9d9;
       border-color: #ccc;
     }
   }
 }
 
-.@{checkboxPrefixCls}-label {
+.@{radioPrefixCls}-label {
   display: inline-block;
   font-size: 15px;
   color: #000;
@@ -88,6 +86,6 @@
   vertical-align: middle;
 }
 
-.@{checkboxPrefixCls} + .@{checkboxPrefixCls}-label {
+.@{radioPrefixCls} + .@{radioPrefixCls}-label {
   margin-left: 5px;
 }
