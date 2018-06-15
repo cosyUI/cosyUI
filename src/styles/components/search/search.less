@@ -20,7 +20,7 @@
   }
 }
 
-.@{searchPrefixCls}-form {
+.@{searchPrefixCls}-inner {
   position: relative;
   flex: 1;
   width: 100%;
@@ -30,6 +30,7 @@
   background-clip: padding-box;
   border-radius: 3px;
   .@{searchPrefixCls}-icon {
+    position: relative;
     display: inline-block;
     width: 16px;
     height: 16px;
@@ -40,89 +41,83 @@
     background-size: 16px auto;
     .encoded-svg-background('search_bar_search');
   }
-}
 
-.@{searchPrefixCls}-box {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  .@{searchPrefixCls}-input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
+  .@{searchPrefixCls}-box {
+    position: relative;
+    height: 100%;
     width: 100%;
-    height: 28px;
-    line-height: 28px;
-    padding: 0 28px 0 35px;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    color: #000;
-    background-color: transparent;
+    display: flex;
+    padding-left: 15px;
+    align-items: center;
     box-sizing: border-box;
     z-index: 1;
+    .@{searchPrefixCls}-input {
+      flex: 1;
+      display: block;
+      width: 100%;
+      height: 28px;
+      line-height: 28px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      color: #000;
+      background-color: transparent;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+
+    .@{searchPrefixCls}-icon {
+      display: block;
+      z-index: 2;
+    }
+
+    .@{searchPrefixCls}-clear {
+      position: relative;
+      display: block;
+      width: 16px;
+      height: 16px;
+      padding: 6px;
+      border-radius: 50%;
+      background-color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 16px 16px;
+      transition: all .3s;
+      .encoded-svg-background('search_bar_clear');
+      box-sizing: content-box;
+      z-index: 3;
+    }
   }
 
-  .@{searchPrefixCls}-icon {
-    position: absolute;
-    left: 10px;
-    top: 7px;
-    margin-right: 0;
-    z-index: 2;
-  }
-
-  .@{searchPrefixCls}-clear {
+  .@{searchPrefixCls}-label {
     position: absolute;
     top: 0;
     right: 0;
-    width: 16px;
-    height: 16px;
-    padding: 6px;;
-    border-radius: 50%;
-    background-color: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 16px 16px;
-    transition: all .3s;
-    .encoded-svg-background('search_bar_clear');
-    box-sizing: content-box;
-    z-index: 3;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 3px;
+    z-index: 2;
+    .@{searchPrefixCls}-icon {
+      top: 50%;
+      transform: translateY(-50%);
+      vertical-align: top;
+    }
+    .@{searchPrefixCls}-placeholder {
+      position: relative;
+      top: 50%;
+      display: inline-block;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #bbb;
+      vertical-align: top;
+    }
   }
 }
 
-.@{searchPrefixCls}-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 28px;
-  line-height: 28px;
-  text-align: center;
-  background-color: #fff;
-  background-clip: padding-box;
-  border-radius: 3px;
-  z-index: 2;
-  .@{searchPrefixCls}-icon {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    vertical-align: top;
-  }
-  .@{searchPrefixCls}-placeholder {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    display: inline-block;
-    font-size: 15px;
-    color: #bbb;
-    vertical-align: top;
-  }
-}
-
-.@{css-prefix}search-cancel {
+.@{searchPrefixCls}-cancel {
   display: none;
   flex: none;
   height: 44px;
