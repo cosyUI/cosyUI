@@ -1,53 +1,55 @@
 @import "rate-variable";
 
-.@{css-prefix}rate {
+@ratePrefixCls: ~"@{css-prefix}rate";
+
+.@{ratePrefixCls} {
   display: inline-block;
-  text-align: left;
-  height: @rateHeight;
-  line-height: @rateHeight;
+  height: 24px;
+  line-height: 24px;
+  color: #e8e8e8;
+  box-sizing: border-box;
   &-item {
+    position: relative;
     display: inline-block;
+    width: 24px;
+    height: 24px;
     text-align: center;
+    color: inherit;
     cursor: pointer;
-    color: @rateDefaultColor;
-    position: relative;
-    height: inherit;
-    &:hover {
-      color: @rateSelectedColor;
+    transition: all .3s;
+
+    &:not(:last-of-type) {
+      margin-right: 5px;
     }
-    &.is-disabled {
-      cursor: not-allowed;
-      .@{css-prefix}rate-outer {
-        color: @rateDefaultColor;
+
+    .@{ratePrefixCls}-inner {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      .encoded-svg-background('rate_inner');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    .@{ratePrefixCls}-outer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: none;
+      width: 100%;
+      height: 100%;
+      .encoded-svg-background('rate_outer');
+      background-size: 24px;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    &.@{ratePrefixCls}-active {
+      .@{ratePrefixCls}-outer {
+        display: block;
       }
     }
-    &.is-active {
-      color: @rateSelectedColor;
-      .@{css-prefix}rate-outer {
-        color: @rateSelectedColor;
-      }
-    }
-  }
-  &-inner {
-    position: relative;
-    display: inline-block;
-    height: inherit;
-  }
-  &-outer {
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    overflow: hidden;
-    height: inherit;
-  }
-  .@{css-prefix}iconfont {
-    display: inline-block;
-    font-size: @rateFontSize;
-    line-height: 1;
-    vertical-align: top;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
   }
 }
