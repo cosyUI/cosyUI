@@ -1,45 +1,70 @@
 @import "navbar-variable";
 
 @navbarPrefixCls: ~"@{css-prefix}navbar";
+@badgePrefixCls: ~"@{css-prefix}badge";
 
 .@{navbarPrefixCls} {
-  display: flex;
-  background-color: #ffffff;
   position: relative;
-  height: @navbar-height;
-  &:after {
-    .setBottomLine();
-  }
+  display: flex;
+  align-items: center;
+  height: 44px;
+  background-color: #fff;
+
   &-item {
-    display: block;
+    position: relative;
     flex: 1;
-    width: 100%;
-    height: 100%;
-    font-size: @navbar-font-size;
+    display: block;
+    min-width: 0;
+    line-height: 44px;
+    font-size: 16px;
     text-align: center;
-    line-height: @navbar-height;
-    color: @navbar-default-color;
-    border-bottom: @navbar-selected-border-size solid transparent;
-    &.is-selected {
-      color: @navbar-selected-color;
-      border-bottom: @navbar-selected-border-size solid @navbar-selected-color;
+    color: #333;
+    box-sizing: border-box;
+    .hairline('bottom');
+
+    > span {
+      display: inline-block;
+      line-height: 1;
     }
-    &.is-disabled {
-      color: @navbar-disabled-color;
-    }
-    &-badge {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      margin: auto 0 auto 0.2rem;
-    }
-    .@{css-prefix}reddot {
-      &:after {
-        width: 0.3rem;
-        height: 0.3rem;
-        top: -0.25rem;
-        right: -0.25rem;
+
+    .@{badgePrefixCls} {
+      .@{badgePrefixCls}-text {
+        top: -13px;
+        transform: translateX(-5px);
       }
+      .@{badgePrefixCls}-dot {
+        top: -6px;
+        transform: translateX(0);
+      }
+    }
+
+    &.@{navbarPrefixCls}-active {
+      color: @brand-primary;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: @brand-primary;
+        z-index: 4;
+      }
+    }
+
+    &.@{navbarPrefixCls}-disabled {
+      color: #ddd;
+    }
+  }
+
+  &&-scoll {
+    overflow-x: auto;
+    overflow-scrolling: touch;
+    .@{navbarPrefixCls}-item {
+      flex: none;
+      display: inline-block;
+      padding: 0 20px;
     }
   }
 }
