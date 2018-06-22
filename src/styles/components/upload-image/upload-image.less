@@ -1,0 +1,176 @@
+@import "upload-image-variable";
+
+@uploadPrefixCls: ~"@{css-prefix}upload";
+
+.@{uploadPrefixCls} {
+  width: 100%;
+  overflow: hidden;
+  &-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 2%;
+    margin-left: -2%;
+    margin-right: -2%;
+
+    .@{uploadPrefixCls}-item {
+      position: relative;
+      flex: 0 0 23%;
+      margin-right: 2%;
+      margin-bottom: 2%;
+
+      .@{uploadPrefixCls}-content {
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          display: none;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 3;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          padding-bottom: 100%;
+          z-index: 1;
+        }
+
+        .@{uploadPrefixCls}-remove {
+          position: absolute;
+          right: 5px;
+          top: 5px;
+          width: 20px;
+          height: 20px;
+          text-align: right;
+          vertical-align: top;
+          .encoded-svg-background('upload_image_delete');
+          background-size: 20px auto;
+          z-index: 5;
+        }
+
+        .@{uploadPrefixCls}-image {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          z-index: 2;
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .@{uploadPrefixCls}-percent {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: none;
+          font-size: 17px;
+          line-height: 1.5;
+          color: #FFFFFF;
+          z-index: 4;
+        }
+
+        .@{uploadPrefixCls}-error {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: none;
+          width: 30px;
+          height: 30px;
+          .encoded-svg-background('warn');
+          background-size: 30px auto;
+          z-index: 4;
+        }
+      }
+
+      &.@{uploadPrefixCls}-process {
+        .@{uploadPrefixCls}-content {
+          &::before {
+            display: block;
+          }
+          .@{uploadPrefixCls}-image {
+            display: none;
+          }
+          .@{uploadPrefixCls}-percent {
+            display: block;
+          }
+        }
+      }
+
+      &.@{uploadPrefixCls}-warn {
+        .@{uploadPrefixCls}-content {
+          &::before {
+            display: block;
+          }
+          .@{uploadPrefixCls}-image {
+            display: none;
+          }
+          .@{uploadPrefixCls}-error {
+            display: block;
+          }
+        }
+      }
+
+      &.@{uploadPrefixCls}-btn {
+        border: 1PX solid #d9d9d9;
+        background: #fff;
+        .@{uploadPrefixCls}-content {
+          .@{uploadPrefixCls}-input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            input {
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              opacity: 0;
+            }
+          }
+
+          .@{uploadPrefixCls}-add {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            text-align: center;
+            z-index: 9;
+            &-icon {
+              display: inline-block;
+              width: 30px;
+              height: 30px;
+              .encoded-svg-background('upload_image_add');
+              background-size: 30px auto;
+            }
+
+            p {
+              margin-top: 5px;
+              font-size: 14px;
+              color: #ccc;
+            }
+          }
+        }
+      }
+    }
+  }
+}
