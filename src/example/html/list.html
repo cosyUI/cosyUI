@@ -7,156 +7,203 @@
   <title>List</title>
   <link rel="stylesheet" href="../../styles/index.css"/>
   <style>
+    html, body {
+      height: 100%;
+    }
   </style>
 </head>
 <body>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute;width: 0;height: 0;"><symbol class="aicon" viewBox="0 0 1024 1024" id="styles--icons--enter" xmlns="http://www.w3.org/2000/svg"><defs><style/></defs><path d="M693.792 498.24l-320-297.664a32 32 0 0 0-43.584 46.848l295.36 274.752-295.84 286.848a31.968 31.968 0 1 0 44.544 45.92l320-310.272a31.968 31.968 0 0 0-.48-46.4"/></symbol><symbol class="bicon" viewBox="0 0 1024 1024" id="styles--icons--right" xmlns="http://www.w3.org/2000/svg"><defs><style/></defs><path d="M761.056 532.128c.512-.992 1.344-1.824 1.792-2.848 8.8-18.304 5.92-40.704-9.664-55.424L399.936 139.744c-19.264-18.208-49.632-17.344-67.872 1.888-18.208 19.264-17.376 49.632 1.888 67.872l316.96 299.84L335.2 813.632c-19.072 18.4-19.648 48.768-1.248 67.872 9.408 9.792 21.984 14.688 34.56 14.688 12 0 24-4.48 33.312-13.44l350.048-337.376c.672-.672.928-1.6 1.6-2.304.512-.48 1.056-.832 1.568-1.344 2.72-2.848 4.16-6.336 6.016-9.6z"/></symbol></svg>
-<div class="cyui-list">
-  <div class="cyui-list-header">Basic Style</div>
-  <div class="cyui-list-body">
-    <div class="cyui-list-item">
-      <div class="cyui-list-line">
-        <div class="cyui-list-content">Title</div>
-        <div class="cyui-list-extra">extra content</div>
-      </div>
+<div class="cyui-layout">
+  <header class="cyui-layout-header cyui-header">
+    <div class="cyui-header-left">
+      <span class="left-arrow"></span>
+      <a class="cyui-header-btn">返回</a>
     </div>
-  </div>
-</div>
-<div class="cyui-list">
-  <div class="cyui-list-header">Subtitle</div>
-  <div class="cyui-list-body">
-    <div class="cyui-list-item cyui-list-multiple">
-      <div class="cyui-list-line">
-        <div class="cyui-list-content">
-          Title
-          <div class="cyui-list-brief">subtitle</div>
+    <h1 class="cyui-header-title">标题过长会隐藏后面的内容啊哈哈哈哈</h1>
+    <div class="cyui-header-right">
+      <a class="cyui-header-btn">
+        <i class="cyui-iconfont icon-caigou-xianxing"></i>
+      </a>
+      <a class="cyui-header-btn">
+        <i class="cyui-iconfont icon-gengduo-hengxiang"></i>
+      </a>
+    </div>
+  </header>
+  <div class="cyui-layout-wrapper">
+    <div class="cyui-list">
+      <div class="cyui-list-header">Basic Style</div>
+      <div class="cyui-list-body">
+        <div class="cyui-list-item">
+          <div class="cyui-list-line">
+            <div class="cyui-list-content">Title</div>
+            <div class="cyui-list-extra">extra content</div>
+          </div>
         </div>
-        <div class="cyui-list-arrow cyui-list-arrow-right"></div>
       </div>
     </div>
-    <div class="cyui-list-item cyui-list-multiple">
-      <div class="cyui-list-line">
-        <div class="cyui-list-content">
-          ListItem （Android）
-          <div class="cyui-list-brief">There may have water ripple effect of material if you set the click event.</div>
+    <div class="cyui-list">
+      <div class="cyui-list-header">Subtitle</div>
+      <div class="cyui-list-body">
+        <div class="cyui-list-item cyui-list-multiple">
+          <div class="cyui-list-line">
+            <div class="cyui-list-content">
+              Title
+              <div class="cyui-list-brief">subtitle</div>
+            </div>
+            <div class="cyui-list-arrow cyui-list-arrow-right"></div>
+          </div>
         </div>
-        <div class="cyui-list-arrow cyui-list-arrow-right"></div>
-      </div>
-      <div class="cyui-list-ripple" style="display: none;"></div>
-    </div>
-    <div class="cyui-list-item cyui-list-multiple">
-      <div class="cyui-list-line">
-        <div class="cyui-list-thumb">
-          <img src="../images/pic_48.png" alt="">
+        <div class="cyui-list-item cyui-list-multiple">
+          <div class="cyui-list-line">
+            <div class="cyui-list-content">
+              ListItem （Android）
+              <div class="cyui-list-brief">There may have water ripple effect of material if you set the click event.
+              </div>
+            </div>
+            <div class="cyui-list-arrow cyui-list-arrow-right"></div>
+          </div>
+          <div class="cyui-list-ripple" style="display: none;"></div>
         </div>
-        <div class="cyui-list-content">
-          Title
-          <div class="cyui-list-brief">subtitle</div>
+        <div class="cyui-list-item cyui-list-multiple">
+          <div class="cyui-list-line">
+            <div class="cyui-list-thumb">
+              <img src="../images/pic_48.png" alt="">
+            </div>
+            <div class="cyui-list-content">
+              Title
+              <div class="cyui-list-brief">subtitle</div>
+            </div>
+            <div class="cyui-list-arrow cyui-list-arrow-right"></div>
+          </div>
         </div>
-        <div class="cyui-list-arrow cyui-list-arrow-right"></div>
       </div>
     </div>
-  </div>
-</div>
-<div class="cyui-list">
-  <div class="cyui-list-header">Customized Right Side（Empty Content / Text / Image）</div>
-  <div class="cyui-list-body">
-    <div class="cyui-list-item">
-      <div class="cyui-list-line">
-        <div class="cyui-list-content">Title</div>
-      </div>
-    </div>
-    <div class="cyui-list-item">
-      <div class="cyui-list-line">
-        <div class="cyui-list-content">Title</div>
-        <div class="cyui-list-arrow cyui-list-arrow-right"></div>
-      </div>
-    </div>
-    <div class="cyui-list-item">
-      <div class="cyui-list-line">
-        <div class="cyui-list-content">Title</div>
-        <div class="cyui-list-extra">extra content</div>
-        <div class="cyui-list-arrow cyui-list-arrow-right"></div>
-      </div>
-    </div>
-    <div class="cyui-list-item cyui-list-multiple">
-      <div class="cyui-list-line">
-        <div class="cyui-list-thumb">
-          <img src="../images/pic_48.png" alt="">
+    <div class="cyui-list">
+      <div class="cyui-list-header">Customized Right Side（Empty Content / Text / Image）</div>
+      <div class="cyui-list-body">
+        <div class="cyui-list-item">
+          <div class="cyui-list-line">
+            <div class="cyui-list-content">Title</div>
+          </div>
         </div>
-        <div class="cyui-list-content">
-          <div class="cyui-flexbox">
-            <div class="cyui-flexbox-item">Title</div>
+        <div class="cyui-list-item">
+          <div class="cyui-list-line">
+            <div class="cyui-list-content">Title</div>
+            <div class="cyui-list-arrow cyui-list-arrow-right"></div>
+          </div>
+        </div>
+        <div class="cyui-list-item">
+          <div class="cyui-list-line">
+            <div class="cyui-list-content">Title</div>
+            <div class="cyui-list-extra">extra content</div>
+            <div class="cyui-list-arrow cyui-list-arrow-right"></div>
+          </div>
+        </div>
+        <div class="cyui-list-item cyui-list-multiple">
+          <div class="cyui-list-line">
+            <div class="cyui-list-thumb">
+              <img src="../images/pic_48.png" alt="">
+            </div>
+            <div class="cyui-list-content">
+              <div class="cyui-flexbox">
+                <div class="cyui-flexbox-item">Title</div>
+                <div class="cyui-list-extra">10:30</div>
+              </div>
+              <div class="cyui-list-brief">subtitle</div>
+            </div>
+          </div>
+        </div>
+        <div class="cyui-list-item cyui-list-multiple">
+          <div class="cyui-list-line">
+            <div class="cyui-list-thumb">
+              <img src="../images/pic_48.png" alt="">
+            </div>
+            <div class="cyui-list-content">
+              Title
+              <div class="cyui-list-brief">subtitle</div>
+            </div>
             <div class="cyui-list-extra">10:30</div>
           </div>
-          <div class="cyui-list-brief">subtitle</div>
         </div>
-      </div>
-    </div>
-    <div class="cyui-list-item cyui-list-multiple">
-      <div class="cyui-list-line">
-        <div class="cyui-list-thumb">
-          <img src="../images/pic_48.png" alt="">
-        </div>
-        <div class="cyui-list-content">
-          Title
-          <div class="cyui-list-brief">subtitle</div>
-        </div>
-        <div class="cyui-list-extra">10:30</div>
-      </div>
-    </div>
-    <div class="cyui-list-item cyui-list-multiple">
-      <div class="cyui-list-line cyui-list-top">
-        <div class="cyui-list-thumb" style="padding: 5px 0 0;">
-          <img src="../images/pic_48.png" alt="" style="width: 40px;height: 40px;">
-        </div>
-        <div class="cyui-list-content">
-          <div class="cyui-flexbox">
-            <div class="cyui-flexbox-item">订邮</div>
-            <div class="cyui-list-extra">2017/9/27</div>
+        <div class="cyui-list-item cyui-list-multiple">
+          <div class="cyui-list-line cyui-list-top">
+            <div class="cyui-list-thumb" style="padding: 5px 0 0;">
+              <img src="../images/pic_200.jpg" alt="" style="width: 40px;height: 40px;">
+            </div>
+            <div class="cyui-list-content">
+              <div class="cyui-flexbox">
+                <div class="cyui-flexbox-item">订邮</div>
+                <div class="cyui-list-extra">2017/9/27</div>
+              </div>
+              <div class="cyui-list-brief">不用快递单号也能查快递单黑科技</div>
+              <div class="cyui-list-brief">工作中客户快递合同、发票等给你，怎么查询...</div>
+            </div>
           </div>
-          <div class="cyui-list-brief">不用快递单号也能查快递单黑科技</div>
-          <div class="cyui-list-brief">工作中客户快递合同、发票等给你，怎么查询...</div>
+        </div>
+      </div>
+    </div>
+    <div class="cyui-list">
+      <div class="cyui-list-header">Align Vertical Center</div>
+      <div class="cyui-list-body">
+        <div class="cyui-list-item cyui-list-multiple">
+          <div class="cyui-list-line">
+            <div class="cyui-list-content">
+              Title
+              <div class="cyui-list-brief">subtitle</div>
+            </div>
+            <div class="cyui-list-extra">extra content</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cyui-list">
+      <div class="cyui-list-header">Icon in the left</div>
+      <div class="cyui-list-body">
+        <div class="cyui-list-item">
+          <div class="cyui-list-line">
+            <div class="cyui-list-thumb"><img src="../images/pic_48.png"></div>
+            <div class="cyui-list-content">My wallet</div>
+            <div class="cyui-list-extra">extra content</div>
+            <div class="cyui-list-arrow cyui-list-arrow-right"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cyui-list">
+      <div class="cyui-list-header">Other</div>
+      <div class="cyui-list-body">
+        <div class="cyui-list-item cyui-list-disabled">
+          <div class="cyui-list-line">
+            <div class="cyui-list-content">Click to disable</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="cyui-list">
-  <div class="cyui-list-header">Align Vertical Center</div>
-  <div class="cyui-list-body">
-    <div class="cyui-list-item cyui-list-multiple">
-      <div class="cyui-list-line">
-        <div class="cyui-list-content">
-          Title
-          <div class="cyui-list-brief">subtitle</div>
-        </div>
-        <div class="cyui-list-extra">extra content</div>
+  <div class="cyui-layout-footer cyui-tabbar">
+    <a class="cyui-tabbar-item is-selected">
+      <div class="cyui-tabbar-icon cyui-badge">
+        <i class="cyui-iconfont icon-shouye"></i>
+        <sup class="cyui-badge-text">new</sup>
       </div>
-    </div>
-  </div>
-</div>
-<div class="cyui-list">
-  <div class="cyui-list-header">Icon in the left</div>
-  <div class="cyui-list-body">
-    <div class="cyui-list-item">
-      <div class="cyui-list-line">
-        <div class="cyui-list-thumb"><img src="../images/pic_48.png"></div>
-        <div class="cyui-list-content">My wallet</div>
-        <div class="cyui-list-extra">extra content</div>
-        <div class="cyui-list-arrow cyui-list-arrow-right"></div>
+      <p class="cyui-tabbar-label">首页</p>
+    </a>
+    <a class="cyui-tabbar-item">
+      <div class="cyui-tabbar-icon cyui-badge">
+        <i class="cyui-iconfont icon-shouye"></i>
+        <span class="cyui-badge-dot"></span>
       </div>
-    </div>
-  </div>
-</div>
-<div class="cyui-list">
-  <div class="cyui-list-header">Other</div>
-  <div class="cyui-list-body">
-    <div class="cyui-list-item cyui-list-disabled">
-      <div class="cyui-list-line">
-        <div class="cyui-list-content">Click to disable</div>
+      <p class="cyui-tabbar-label">首页</p>
+    </a>
+    <a class="cyui-tabbar-item">
+      <div class="cyui-tabbar-icon cyui-tabbar-icon-alone cyui-badge">
+        <i class="cyui-iconfont icon-shouye"></i>
+        <span class="cyui-badge-text">3</span>
       </div>
-    </div>
+    </a>
+    <a class="cyui-tabbar-item">
+      <p class="cyui-tabbar-label">首页</p>
+    </a>
   </div>
 </div>
 </body>
