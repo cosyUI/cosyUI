@@ -4,22 +4,23 @@
 
 .@{headerPrefixCls} {
   position: relative;
-  background-color: @header-fill;
-  height: @header-height;
-  line-height: @header-height;
-  padding: @header-padding;
-  color: @header-color;
-  font-size: @header-font-size;
-  text-align: center;
-  white-space: nowrap;
   display: flex;
+  height: @header-height;
+  padding: 0 @header-h-spacing;
+  font-size: @header-font-size;
+  line-height: @header-height;
+  text-align: center;
+  background-color: @header-fill;
+  color: @header-color;
+  white-space: nowrap;
   align-items: center;
+  justify-content: space-between;
   z-index: @header-zindex;
   &-title {
-    .ellipsis();
-    font-size: @header-title-font-size;
     flex: 1;
     height: inherit;
+    font-size: @header-title-font-size;
+    .ellipsis();
   }
   &-right,
   &-left {
@@ -30,9 +31,10 @@
     align-items: center;
   }
   &-left {
+    justify-content: flex-start;
     .left-arrow {
       display: block;
-      padding-right: @header-left-arrow-padding-right;
+      padding-right: @header-left-arrow-v-spacing;
       &:after {
         content: " ";
         .setArrow(left, @header-left-arrow-size, @header-left-arrow-color, @header-left-arrow-width);
@@ -47,42 +49,52 @@
   }
   &-btn {
     position: relative;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    justify-content: center;
+    min-width: @header-btn-width;
+    font-size: @header-btn-font-size;
+    line-height: 1.5;
     text-align: center;
     color: inherit;
-    font-size: @header-font-size;
-    min-width: @header-btn-width;
     .@{css-prefix}iconfont {
+      display: block;
       line-height: 1;
-      display: inline-block;
-      font-size: @header-iconfont-font-size;
-      vertical-align: middle;
+      font-size: @header-btn-icon-font-size;
+      &:only-child {
+        font-size: @header-btn-icon-font-size-only;
+      }
+    }
+    .@{headerPrefixCls}-btn-text {
+      display: block;
+      line-height: 1;
+      font-size: @header-btn-text-font-size;
+      &:only-child {
+        font-size: @header-btn-text-font-size-only;
+      }
     }
     .@{css-prefix}iconfont + .@{headerPrefixCls}-btn-text {
-      margin-left: 2px;
+      margin-top: @header-btn-text-v-spacing;
     }
     & + & {
-      padding-left: @header-btn-padding-left;
+      padding-left: @header-btn-h-spacing;
     }
   }
   /* 图表 文字 垂直 Vertical*/
   &-vertical {
-    line-height: 1.2;
-    padding-top: 0;
-    padding-bottom: 0;
-    .@{css-prefix}iconfont {
-      display: block;
-      font-size: @header-vertical-iconfont-font-size;
-    }
-    .@{css-prefix}iconfont + .@{headerPrefixCls}-btn-text {
-      margin-left: 0;
-      font-size: @header-vertical-text-font-size;
-    }
   }
   /* 图表 文字 水平 Horizontal*/
   &-horizontal {
+    flex-direction: row;
     .@{css-prefix}iconfont {
-      font-size: @header-horizontal-iconfont-font-size;
+      font-size: @header-btn-horizontal-icon-font-size;
+    }
+    .@{css-prefix}iconfont + .@{headerPrefixCls}-btn-text {
+      margin-top: 0;
+      margin-left: 0;
+      font-size: @header-btn-horizontal-text-font-size;
     }
   }
   a {
