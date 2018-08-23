@@ -3,69 +3,69 @@
 @tabbarPrefixCls: ~"@{css-prefix}tabbar";
 
 .@{tabbarPrefixCls} {
-  position: absolute;
+  position: relative;
   left: 0;
   bottom: 0;
-  width: 100%;
-  height: @tabbar-height;
-  background-color: @tabbar-bg;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  width: 100%;
+  height: @tabbar-height;
+  background-color: @tabbar-fill;
   z-index: @tabbar-zindex;
-  &:before {
-    .setTopLine();
-  }
+  .hairline('top');
+
   &-item {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: @tabbar-color;
-    text-align: center;
-    height: @tabbar-height;
     width: 100%;
+    height: inherit;
+    color: @tabbar-item-color;
+    text-align: center;
     &.is-selected {
-      color: @tabbar-color-select;
+      color: @tabbar-item-color-select;
     }
   }
   &-icon {
-    display: block;
     position: relative;
+    display: block;
     color: inherit;
     .@{css-prefix}iconfont {
       display: inline-block;
-      font-size: @tabbar-font-size-icon;
+      font-size: @tabbar-item-icon-font-size;
       line-height: 1;
       vertical-align: middle;
     }
     &.@{css-prefix}badge {
       display: block;
       :last-child {
-        margin-top: 4px;
-        left: @tabbar-font-size-icon;
+        margin-top: @tabbar-item-badge-v-spacing;
+        left: @tabbar-item-icon-font-size;
       }
     }
-    &-alone {
+    &:only-child {
       .@{css-prefix}iconfont {
-        font-size: 32px;
+        font-size: @tabbar-item-icon-font-size-only;
       }
       &.@{css-prefix}badge {
         :last-child {
-          left: 28px;
+          left: @tabbar-item-badge-h-spacing-only;
         }
       }
     }
   }
   &-label {
     display: block;
-    font-size: @tabbar-font-size;
+    margin-top: @tabbar-item-label-v-spacing;
+    font-size: @tabbar-item-label-font-size;
     line-height: 1;
     text-align: center;
-  }
-  &-icon + &-label {
-    margin-top: 3px;
-    font-size: 12px;
+    &:only-child {
+      margin-top: 0;
+      font-size: @tabbar-item-label-font-size-only;
+    }
   }
 }
