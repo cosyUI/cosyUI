@@ -3,82 +3,92 @@
 @footbarPrefixCls: ~"@{css-prefix}footbar";
 
 .@{footbarPrefixCls} {
-  position: absolute;
+  position: relative;
   left: 0;
   bottom: 0;
+  z-index: @footbar-zindex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: @footbar-height;
-  background-color: @footbar-bg;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: @footbar-zindex;
-  &:before {
-    .setTopLine();
-  }
+  background-color: @footbar-fill;
+
   & &-item {
-    color: @footbar-color;
     flex: 1;
     display: block;
     text-align: center;
   }
   & .@{css-prefix}tabbar {
-    position: relative;
-    width: auto;
-    height: @footbar-height;
-    background-color: transparent;
     flex: none;
     display: flex;
+    width: auto;
+    height: inherit;
+    background-color: transparent;
     z-index: 0;
+    .hairline-remove('top');
+
     & .@{css-prefix}tabbar-item {
-      color: @footbar-color;
-      width: 58px;
-      min-width: 40px;
-      height: @footbar-height;
-      &.@{footbarPrefixCls}-check {
-        width: auto;
-        padding-left: 10px;
-        .@{css-prefix}tabbar-icon {
-          &-text {
-            font-size: 16px;
-            vertical-align: middle;
-          }
-        }
+      width: @footbar-tabbar-width;
+      color: @footbar-tabbar-color;
+    }
+  }
+
+  & &-checkbox {
+    flex: none;
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    justify-content: center;
+    width: auto;
+    padding-left: @footbar-checkbox-h-spacing;
+    padding-right: @footbar-checkbox-h-spacing;
+    .@{css-prefix}checkbox,
+    .@{css-prefix}checkbox-label {
+      display: block;
+    }
+    &-vertical {
+      flex-direction: column;
+      .@{css-prefix}checkbox + .@{css-prefix}checkbox-label {
+        margin-left: 0;
+        font-size: @footbar-checkbox-font-size-v;
       }
     }
   }
+
   & &-btns {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
     & .@{css-prefix}btn {
       flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: @footbar-btn-width;
-      height: @footbar-height;
-      line-height: @footbar-height - 2px;
-      font-size: @footbar-btn-font-size;
+      display: block;
+      height: @footbar-btn-height;
+      min-width: @footbar-btn-width-sm;
       margin: 0;
+      font-size: @footbar-btn-font-size;
+      line-height: @footbar-btn-height;
+      border-width: 0;
     }
   }
   & &-info {
-    text-align: left;
-    padding-left: 15px;
-    & p {
+    text-align: @footbar-info-text-align;
+    padding-left: @footbar-info-h-spacing;
+    & [class*=-footbar-total],
+    & [class*=-footbar-tip] {
       display: block;
-      font-size: @footbar-font-size;
-      color: @footbar-color;
+      font-size: @footbar-info-font-size;
+      color: @footbar-info-color;
       line-height: 1.2;
     }
-    p + p {
-      margin-top: 5px;
+    [class*=-footbar-total] + [class*=-footbar-tip] {
+      margin-top: 5 * @rpx;
     }
     & [class*=-footbar-total] {
-      font-size: @footbar-info-font-size;
+      font-size: @footbar-info-total-font-size;
       font-weight: bold;
-      color: @footbar-info-color;
+      color: @footbar-info-total-color;
       em {
         color: @brand-primary;
       }
