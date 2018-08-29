@@ -16,21 +16,21 @@
   align-items: center;
   justify-content: space-between;
   z-index: @header-zindex;
-  &-title {
+  & &-title {
     flex: 1;
     height: inherit;
     font-size: @header-title-font-size;
     .ellipsis();
   }
-  &-right,
-  &-left {
+  & &-right,
+  & &-left {
     position: relative;
     flex: .5;
     height: inherit;
     display: flex;
     align-items: center;
   }
-  &-left {
+  & &-left {
     justify-content: flex-start;
     .left-arrow {
       display: block;
@@ -41,69 +41,87 @@
         position: relative;
         top: 0;
         left: @header-left-arrow-width;
+        vertical-align: middle;
       }
       &:only-child {
         padding-right: @header-left-arrow-v-spacing-only;
       }
     }
   }
-  &-right {
+  & &-right {
     justify-content: flex-end;
   }
-  &-btn {
+  & &-btn {
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     align-self: stretch;
-    justify-content: center;
     min-width: @header-btn-width;
     font-size: @header-btn-font-size;
-    line-height: 1.5;
     text-align: center;
     color: inherit;
-    .@{css-prefix}iconfont {
+    .@{headerPrefixCls}-btn-icon {
+      position: relative;
       display: block;
-      line-height: 1;
-      font-size: @header-btn-icon-font-size;
+      color: inherit;
+      .@{css-prefix}iconfont {
+        display: block;
+        font-size: @header-btn-icon-font-size;
+        line-height: 1;
+        vertical-align: middle;
+      }
+      &.@{css-prefix}badge {
+        display: block;
+        :last-child {
+          margin-top: @header-btn-badge-v-spacing;
+          left: @header-btn-icon-font-size;
+        }
+      }
       &:only-child {
-        font-size: @header-btn-icon-font-size-only;
+        .@{css-prefix}iconfont {
+          font-size: @header-btn-icon-font-size-only;
+        }
+        &.@{css-prefix}badge {
+          :last-child {
+            left: @header-btn-badge-h-spacing-only;
+          }
+        }
       }
     }
-    .@{headerPrefixCls}-btn-text {
+    .@{headerPrefixCls}-btn-label {
       display: block;
+      font-size: @header-btn-label-font-size;
       line-height: 1;
-      font-size: @header-btn-text-font-size;
+      text-align: center;
       &:only-child {
-        font-size: @header-btn-text-font-size-only;
+        font-size: @header-btn-label-font-size-only;
       }
     }
-    .@{css-prefix}iconfont + .@{headerPrefixCls}-btn-text {
-      margin-top: @header-btn-text-v-spacing;
+    .@{headerPrefixCls}-btn-icon + .@{headerPrefixCls}-btn-label {
+      margin-top: @header-btn-label-v-spacing;
     }
     & + & {
       padding-left: @header-btn-h-spacing;
     }
-  }
-  /* 图表 文字 垂直 Vertical*/
-  &-vertical {
-  }
-  /* 图表 文字 水平 Horizontal*/
-  &-horizontal {
-    flex-direction: row;
-    .@{css-prefix}iconfont {
-      font-size: @header-btn-horizontal-icon-font-size;
+
+    /* 图表 文字 垂直 Vertical*/
+    &.@{headerPrefixCls}-btn-vertical {
     }
-    .@{css-prefix}iconfont + .@{headerPrefixCls}-btn-text {
-      margin-top: 0;
-      margin-left: 0;
-      font-size: @header-btn-horizontal-text-font-size;
-    }
-  }
-  a {
-    &:hover,
-    &:active {
-      color: @header-color;
+    /* 图表 文字 水平 Horizontal*/
+    &.@{headerPrefixCls}-btn-horizontal {
+      flex-direction: row;
+      .@{headerPrefixCls}-btn-icon {
+        .@{css-prefix}iconfont {
+          font-size: @header-btn-horizontal-icon-font-size;
+        }
+      }
+      .@{headerPrefixCls}-btn-icon + .@{headerPrefixCls}-btn-label {
+        margin-top: 0;
+        margin-left: 0;
+        font-size: @header-btn-horizontal-text-font-size;
+      }
     }
   }
 }
