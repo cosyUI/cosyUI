@@ -3,6 +3,19 @@
 @paginationPrefixCli: ~"@{css-prefix}pagination";
 
 .@{paginationPrefixCli} {
+  display: flex;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  &-item {
+    flex: 1;
+    height: 40px;
+    min-width: 36px;
+    color: @brand-primary;
+    background-color: #fff;
+    box-sizing: border-box;
+    user-select: none;
+  }
   &-wrap {
     font-size: 18px;
     color: #000;

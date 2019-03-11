@@ -5,27 +5,36 @@
 .@{btnPrefixCls} {
   display: inline-block;
   outline: 0;
-  -webkit-appearance: none;
-  padding: 0 15px;
+  appearance: none;
+  box-sizing: content-box;
+  padding: 0 15 * @rpx;
   text-align: center;
   vertical-align: middle;
-  border: 1px solid transparent;
-  white-space: nowrap;
+  user-select: none;
+
+  // size
   .button-size(@button-height, @button-font-size);
 
-  // default
-  color: #000;
-  background-color: #fff;
+  // text
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  white-space: nowrap;
+
+  // style
+  color: @button-default-color;
+  background-color: @button-default-fill;
+  border: 1PX solid @button-default-border-color;
 
   & > [class*=-iconfont] {
-    display: inline-block;
-    line-height: 1;
-    font-size: 24px;
-    vertical-align: top;
     position: relative;
     top: 50%;
+    display: inline-block;
+    margin-right: 5 * @rpx;
+    line-height: 1;
+    font-size: 24 * @rpx;
+    vertical-align: top;
     transform: translateY(-50%);
-    margin-right: 5px;
   }
 
   &:active,
@@ -41,7 +50,7 @@
 
   // Alternate buttons
   &-default {
-    .button-variant(@button-default-color, @button-default-fill, #e6e6e6);
+    .button-variant(@button-default-color, @button-default-fill, @button-default-border-color);
   }
   &-primary {
     .button-variant(@button-primary-color, @button-primary-fill, @button-primary-fill);
@@ -82,12 +91,12 @@
     padding: 0;
     // Vertically space out multiple block buttons
     & + & {
-      margin-top: 5px;
+      margin-top: 10 * @rpx;
     }
   }
 
   //Button Radius
   &-radius {
-    border-radius: 5px;
+    border-radius: 5 * @rpx;
   }
 }

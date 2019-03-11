@@ -8,12 +8,11 @@
   background-color: @background;
   border-color: @border;
 
-  &:hover,
   &:active,
   &.@{btnPrefixCls}-active {
     color: fade(@color, 70%);
-    background-color: darken(@background, 10%);
-    border-color: darken(@border, 10%);
+    background-color: darken(@background, 5%);
+    border-color: darken(@border, 5%);
   }
   &.@{btnPrefixCls}-disabled,
   &[disabled] {
@@ -23,7 +22,7 @@
 }
 
 // Button sizes
-.button-size(@button-height,@button-font-size, @button-border-radius: 0px) {
+.button-size(@button-height,@button-font-size, @button-border-radius: 0) {
   font-size: @button-font-size;
   height: @button-height;
   line-height: @button-height;
