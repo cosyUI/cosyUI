@@ -6,7 +6,7 @@
   display: inline-block;
   outline: 0;
   appearance: none;
-  box-sizing: content-box;
+  box-sizing: border-box;
   padding: 0 15 * @rpx;
   text-align: center;
   vertical-align: middle;
@@ -24,18 +24,7 @@
   // style
   color: @button-default-color;
   background-color: @button-default-fill;
-  border: 1PX solid @button-default-border-color;
-
-  & > [class*=-iconfont] {
-    position: relative;
-    top: 50%;
-    display: inline-block;
-    margin-right: 5 * @rpx;
-    line-height: 1;
-    font-size: 24 * @rpx;
-    vertical-align: top;
-    transform: translateY(-50%);
-  }
+  border: 1 * @rpx solid @button-default-border-color;
 
   &:active,
   &&-active {
@@ -52,27 +41,44 @@
   &-default {
     .button-variant(@button-default-color, @button-default-fill, @button-default-border-color);
   }
+
   &-primary {
-    .button-variant(@button-primary-color, @button-primary-fill, @button-primary-fill);
+    .button-variant(@button-primary-color, @button-primary-fill, @button-primary-border-color);
   }
+
   // Success appears as green
   &-success {
-    .button-variant(@button-success-color, @button-success-fill, @button-success-fill);
+    .button-variant(@button-success-color, @button-success-fill, @button-success-border-color);
   }
-  // Info appears as blue-green
-  &-info {
-    .button-variant(@button-info-color, @button-info-fill, @button-info-fill);
-  }
+
   // Warning appears as orange
   &-warning {
-    .button-variant(@button-warning-color, @button-warning-fill, @button-warning-fill);
+    .button-variant(@button-warning-color, @button-warning-fill, @button-warning-border-color);
   }
+
   // Danger and error appear as red
   &-danger {
-    .button-variant(@button-danger-color, @button-danger-fill, @button-danger-fill);
+    .button-variant(@button-danger-color, @button-danger-fill, @button-danger-border-color);
   }
+
   &-ghost {
-    .button-variant(@btn-ghost-color, @btn-ghost-fill, @btn-ghost-color);
+    color: @btn-ghost-color;
+    background-color: @btn-ghost-fill;
+    border-color: @btn-ghost-border-color;
+
+    &:active,
+    &.@{btnPrefixCls}-active {
+      color: fade(@btn-ghost-color, 70%);
+      background-color: @btn-ghost-fill;
+      border-color: fade(@btn-ghost-border-color, 70%);
+    }
+    &.@{btnPrefixCls}-disabled,
+    &[disabled] {
+      color: fade(#000, 20%);
+      background-color: @btn-ghost-fill;
+      border-color: fade(#000, 10%);
+      opacity: 1;
+    }
   }
 
   // Button Sizes
@@ -95,8 +101,20 @@
     }
   }
 
-  //Button Radius
+  // Button Radius
   &-radius {
     border-radius: 5 * @rpx;
+  }
+
+  // Icon
+  & > [class*=-iconfont] {
+    position: relative;
+    top: 50%;
+    display: inline-block;
+    margin-right: 5 * @rpx;
+    line-height: 1;
+    font-size: 24 * @rpx;
+    vertical-align: top;
+    transform: translateY(-50%);
   }
 }

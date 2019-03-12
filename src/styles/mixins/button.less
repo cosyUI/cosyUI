@@ -10,14 +10,16 @@
 
   &:active,
   &.@{btnPrefixCls}-active {
-    color: fade(@color, 70%);
+    color: fade(@color, 90%);
     background-color: darken(@background, 5%);
     border-color: darken(@border, 5%);
   }
   &.@{btnPrefixCls}-disabled,
   &[disabled] {
     color: fade(@color, 60%);
-    opacity: .4;
+    background-color: fade(@background, 50%);
+    border-color: fade(@border, 20%);
+    opacity: 1;
   }
 }
 
@@ -25,6 +27,6 @@
 .button-size(@button-height,@button-font-size, @button-border-radius: 0) {
   font-size: @button-font-size;
   height: @button-height;
-  line-height: @button-height;
+  line-height: @button-height - 2 * @rpx;
   border-radius: @button-border-radius;
 }
