@@ -10,16 +10,16 @@
 
   &:active,
   &.@{btnPrefixCls}-active {
-    color: fade(@color, 90%);
+    color: fade(@color, 80%);
     background-color: darken(@background, 5%);
     border-color: darken(@border, 5%);
   }
   &.@{btnPrefixCls}-disabled,
   &[disabled] {
     color: fade(@color, 60%);
-    background-color: fade(@background, 50%);
-    border-color: fade(@border, 20%);
-    opacity: 1;
+    background-color: @background;
+    border-color: @border;
+    opacity: 0.6;
   }
 }
 

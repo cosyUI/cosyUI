@@ -3,14 +3,15 @@
 @btnPrefixCls: ~"@{css-prefix}btn";
 
 .@{btnPrefixCls} {
-  display: inline-block;
+  display: block;
   outline: 0;
-  appearance: none;
   box-sizing: border-box;
-  padding: 0 15 * @rpx;
+  padding: 0;
   text-align: center;
   vertical-align: middle;
   user-select: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
 
   // size
   .button-size(@button-height, @button-font-size);
@@ -28,12 +29,13 @@
 
   &:active,
   &&-active {
-    background-color: darken(#fff, 10%);
+    background-color: darken(@button-default-fill, 5%);
   }
 
   &&-disabled,
   &[disabled] {
-    color: fade(#000, 30%);
+    color: fade(@button-default-color, 60%);
+    background-color: @button-default-fill;
     opacity: 0.6;
   }
 
@@ -69,8 +71,8 @@
     &:active,
     &.@{btnPrefixCls}-active {
       color: fade(@btn-ghost-color, 70%);
-      background-color: @btn-ghost-fill;
-      border-color: fade(@btn-ghost-border-color, 70%);
+      background-color: darken(@btn-ghost-fill, 2%);
+      border-color: fade(@btn-ghost-color, 70%);
     }
     &.@{btnPrefixCls}-disabled,
     &[disabled] {
@@ -89,25 +91,30 @@
     .button-size(@button-height-small, @button-font-size-small);
   }
 
-  // Block button
-  // --------------------------------------------------
-
-  &-block {
-    display: block;
-    padding: 0;
-    // Vertically space out multiple block buttons
-    & + & {
-      margin-top: 10 * @rpx;
-    }
-  }
-
   // Button Radius
   &-radius {
     border-radius: 5 * @rpx;
   }
 
+  // Vertically space out multiple block buttons
+  & + & {
+    margin-top: 10 * @rpx;
+  }
+
+  // Inline button
+  // --------------------------------------------------
+
+  &-inline {
+    display: inline-block;
+    padding: 0 15 * @rpx;
+
+    & + & {
+      margin-top: 0;
+    }
+  }
+
   // Icon
-  & > [class*=-iconfont] {
+  & > [class*=-icon] {
     position: relative;
     top: 50%;
     display: inline-block;

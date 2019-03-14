@@ -6,56 +6,60 @@
   <title>Button</title>
   <link rel="stylesheet" href="../../styles/index.css"/>
   <style>
-    div {
-      margin-bottom: 15px;
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    .button-group {
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-<div class="bs-example" style="padding: 0 20px;">
-  <div></div>
-  <div>
-    <span class="cyui-btn cyui-btn-default cyui-btn-block">default</span>
-  </div>
-  <div>
-    <span class="cyui-btn cyui-btn-default cyui-btn-block cyui-btn-disabled">default disabled</span>
-  </div>
-  <div>
-    <span class="cyui-btn cyui-btn-primary cyui-btn-block">primary</span>
-  </div>
-  <div>
-    <span class="cyui-btn cyui-btn-primary cyui-btn-block cyui-btn-disabled">primary disabled</span>
-  </div>
-  <div>
-    <span class="cyui-btn cyui-btn-warning cyui-btn-block">Warning</span>
-  </div>
-  <div>
-    <span class="cyui-btn cyui-btn-warning cyui-btn-block cyui-btn-disabled">Warning disabled</span>
-  </div>
-  <div>
-    <span class="cyui-btn cyui-btn-ghost cyui-btn-block">Ghost</span>
-  </div>
-  <div>
-    <span class="cyui-btn cyui-btn-ghost cyui-btn-block cyui-btn-disabled">Ghost disabled</span>
-  </div>
-  <div>
-    <button type="button" class="cyui-btn cyui-btn-default">Default</button>
-    <button type="button" class="cyui-btn cyui-btn-primary">Primary</button>
-    <button type="button" class="cyui-btn cyui-btn-ghost">Ghost</button>
-    <button type="button" class="cyui-btn cyui-btn-success">Success</button>
-    <button type="button" class="cyui-btn cyui-btn-info">Info</button>
-    <button type="button" class="cyui-btn cyui-btn-warning">Warning</button>
-    <button type="button" class="cyui-btn cyui-btn-danger">Danger</button>
-  </div>
-  <div>
-    <button type="button" class="cyui-btn cyui-btn-primary">（base）Primary</button>
-    <button type="button" class="cyui-btn cyui-btn-primary cyui-btn-small">（small）Primary</button>
-  </div>
-  <div>
-    <a class="cyui-btn cyui-btn-primary"><i class="cyui-icon cyui-iconfont icon-yonghu"></i><em>设置</em></a>
-  </div>
-  <div>
-    <button type="button" class="cyui-btn cyui-btn-primary cyui-btn-radius">（圆角）Primary</button>
+<div class="cyui-layout">
+  <header class="cyui-header">
+    <div class="cyui-header-left"></div>
+    <h1 class="cyui-header-title">按钮 Button</h1>
+    <div class="cyui-header-right"></div>
+  </header>
+  <div class="cyui-layout-wrapper">
+    <div class="bs-example" style="padding: 20px 10px;">
+      <div class="button-group">
+        <span class="cyui-btn cyui-btn-default cyui-btn-radius">default</span>
+        <span class="cyui-btn cyui-btn-primary cyui-btn-radius">primary</span>
+        <span class="cyui-btn cyui-btn-danger cyui-btn-radius">Danger</span>
+        <span class="cyui-btn cyui-btn-ghost cyui-btn-radius">Ghost</span>
+        <span class="cyui-btn cyui-btn-default cyui-btn-radius cyui-btn-disabled">default disabled</span>
+        <span class="cyui-btn cyui-btn-primary cyui-btn-radius cyui-btn-disabled">primary disabled</span>
+        <span class="cyui-btn cyui-btn-danger cyui-btn-radius cyui-btn-disabled">Danger disabled</span>
+        <span class="cyui-btn cyui-btn-ghost cyui-btn-radius cyui-btn-disabled">Ghost disabled</span>
+        <span class="cyui-btn cyui-btn-default cyui-btn-radius">
+          <i class="cyui-icon cyui-iconfont icon-tongbu"></i>
+          <em>loading button</em>
+        </span>
+      </div>
+      <div class="button-group">
+        <span class="cyui-btn cyui-btn-default cyui-btn-inline cyui-btn-radius">Default</span>
+        <span class="cyui-btn cyui-btn-primary cyui-btn-inline cyui-btn-radius">Primary</span>
+        <span class="cyui-btn cyui-btn-ghost cyui-btn-inline cyui-btn-radius">Ghost</span>
+      </div>
+      <div class="button-group">
+        <span class="cyui-btn cyui-btn-default cyui-btn-inline cyui-btn-small cyui-btn-radius">Default</span>
+        <span class="cyui-btn cyui-btn-primary cyui-btn-inline cyui-btn-small cyui-btn-radius">Primary</span>
+        <span class="cyui-btn cyui-btn-ghost cyui-btn-inline cyui-btn-small cyui-btn-radius">Ghost</span>
+      </div>
+      <div class="button-group">
+        <span class="cyui-btn cyui-btn-default cyui-btn-inline cyui-btn-radius">
+          <i class="cyui-icon cyui-iconfont icon-tongbu"></i>
+          <em>loading button</em>
+        </span>
+        <span class="cyui-btn cyui-btn-default cyui-btn-inline cyui-btn-small cyui-btn-radius">
+          <i class="cyui-icon cyui-iconfont icon-tongbu"></i>
+          <em>loading button</em>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 </body>
