@@ -1,47 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cmn-Hans">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>badge</title>
-  <link rel="icon" href="" type="image/x-icon">
+  <title>Badge</title>
   <link rel="stylesheet" href="../../styles/index.css"/>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    .badge-group {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-<div class="cyui-page-tab">
-  <div class="cyui-page-wrap">
-    <div style="padding: 10px 20px;">
-      <span class="cyui-badge">
-        <sup class="cyui-badge-text">50+</sup>
-      </span>
-    </div>
-    <div style="padding: 10px 20px;">
-      <span class="cyui-badge">
-        <sup class="cyui-badge-text">1</sup>
-      </span>
-    </div>
-    <div style="padding: 10px 20px;">
-      <span class="cyui-badge">
-        <sup class="cyui-badge-dot"></sup>
-      </span>
-    </div>
-    <div>
-      <span class="cyui-badge cyui-badge-relative">
-        <sup class="cyui-badge-text cyui-badge-text-green">减</sup>
-      </span>
-      <span class="cyui-badge cyui-badge-relative">
-        <sup class="cyui-badge-text cyui-badge-text-yellow">惠</sup>
-      </span>
-      <span class="cyui-badge cyui-badge-relative">
-        <sup class="cyui-badge-text cyui-badge-text-ghost cyui-badge-text-square">免</sup>
-      </span>
-      <span class="cyui-badge cyui-badge-relative">
-        <sup class="cyui-badge-text cyui-badge-text-square">反</sup>
-      </span>
-      <span class="cyui-badge cyui-badge-relative">
-        <sup class="cyui-badge-text cyui-badge-text-hot">HOT</sup>
-      </span>
+<div class="cyui-layout">
+  <header class="cyui-header">
+    <div class="cyui-header-left"></div>
+    <h1 class="cyui-header-title">徽章 Badge</h1>
+    <div class="cyui-header-right"></div>
+  </header>
+  <div class="cyui-layout-wrapper">
+    <div class="bs-example" style="padding: 20px 10px;">
+      <div class="badge-group">
+        <span class="cyui-badge cyui-badge-relative">
+          <sup class="cyui-badge-text">1</sup>
+        </span>
+        <span class="cyui-badge cyui-badge-relative">
+          <sup class="cyui-badge-text">50+</sup>
+        </span>
+      </div>
+      <div class="badge-group">
+        <span class="cyui-badge cyui-badge-relative">
+          <sup class="cyui-badge-dot cyui-badge-dot-large"></sup>
+        </span>
+        <span class="cyui-badge cyui-badge-relative">
+          <sup class="cyui-badge-dot"></sup>
+        </span>
+      </div>
+      <div class="badge-group">
+        <span class="cyui-badge cyui-badge-relative">
+          <sup class="cyui-badge-text cyui-badge-text-green">减</sup>
+        </span>
+        <span class="cyui-badge cyui-badge-relative">
+          <sup class="cyui-badge-text cyui-badge-text-yellow">惠</sup>
+        </span>
+        <span class="cyui-badge cyui-badge-relative">
+          <sup class="cyui-badge-text cyui-badge-text-ghost cyui-badge-text-square">免</sup>
+        </span>
+        <span class="cyui-badge cyui-badge-relative">
+          <sup class="cyui-badge-text cyui-badge-text-square">反</sup>
+        </span>
+        <span class="cyui-badge cyui-badge-relative">
+          <sup class="cyui-badge-text cyui-badge-text-hot">HOT</sup>
+        </span>
+      </div>
     </div>
   </div>
 </div>

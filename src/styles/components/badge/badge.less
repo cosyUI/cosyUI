@@ -9,23 +9,23 @@
   vertical-align: middle;
   &-text {
     position: absolute;
-    top: -6px;
-    height: @badge-height;
-    line-height: @badge-height;
+    top: -@badge-height/2;
     min-width: @badge-height;
+    height: @badge-height;
+    padding: 0 @badge-h-spacing;
     border-radius: @badge-height/2;
-    padding: 0 @badge-padding-vertical;
+    line-height: @badge-height;
     text-align: center;
     font-size: @badge-font-size;
-    color: @header-text-color;
-    background-color: @badge-bg-color;
+    color: @header-color;
+    background-color: @badge-fill;
     white-space: nowrap;
     transform: translateX(-45%);
     transform-origin: -10% center;
     z-index: 10;
     &&-square {
-      padding: 0 3px;
-      border-radius: 2px;
+      padding: 0 3 * @rpx;
+      border-radius: 2 * @rpx;
     }
     &&-hot {
       background-color: #f96268;
@@ -38,9 +38,9 @@
     }
     &&-ghost {
       background-color: #FFFFFF;
-      color: #ff5b05;
-      border: 1px solid #ff5b05;
-      line-height: 16px;
+      color: @badge-fill;
+      border: 1 * @rpx solid @badge-fill;
+      line-height: @badge-height - 2 * @rpx;
     }
   }
   &-dot {
@@ -51,12 +51,12 @@
     height: @badge-dot-width;
     width: @badge-dot-width;
     border-radius: 100%;
-    background: @badge-bg-color;
+    background: @badge-fill;
     z-index: 10;
 
     &-large {
-      height: 16px;
-      width: 16px;
+      width: @badge-dot-width-lg;
+      height: @badge-dot-width-lg;
     }
   }
 
