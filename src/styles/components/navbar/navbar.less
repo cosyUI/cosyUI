@@ -33,6 +33,7 @@
       display: block;
       font-size: @navbar-item-font-size;
       line-height: @line-height-paragraph;
+
       &.@{badgePrefixCls} {
         .@{badgePrefixCls}-text,
         .@{badgePrefixCls}-dot {
@@ -45,6 +46,7 @@
 
     &.@{navbarPrefixCls}-active {
       color: @navbar-item-color-tap;
+
       &::after {
         content: '';
         position: absolute;
@@ -79,10 +81,12 @@
 
   &&-scollable {
     overflow-x: auto;
-    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+
     &::-webkit-scrollbar {
       display: none;
     }
+
     .@{navbarPrefixCls}-item {
       flex: none;
       padding: 0 @navbar-item-h-spacing;

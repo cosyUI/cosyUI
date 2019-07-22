@@ -9,7 +9,7 @@
   vertical-align: middle;
   &-text {
     position: absolute;
-    top: -@badge-height/2;
+    top: -@badge-height / 2;
     min-width: @badge-height;
     height: @badge-height;
     padding: 0 @badge-h-spacing;
@@ -17,7 +17,7 @@
     line-height: @badge-height;
     text-align: center;
     font-size: @badge-font-size;
-    color: @header-color;
+    color: @badge-color;
     background-color: @badge-fill;
     white-space: nowrap;
     transform: translateX(-45%);
@@ -46,12 +46,12 @@
   &-dot {
     position: absolute;
     top: -@badge-dot-width/2;
-    transform: translateX(-50%);
-    transform-origin: 0 center;
-    height: @badge-dot-width;
     width: @badge-dot-width;
+    height: @badge-dot-width;
     border-radius: 100%;
     background: @badge-fill;
+    transform: translateX(-50%);
+    transform-origin: 0 center;
     z-index: 10;
 
     &-large {

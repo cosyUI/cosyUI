@@ -3,15 +3,55 @@
 @popupPrefixCli: ~"@{css-prefix}popup";
 
 .@{popupPrefixCli} {
-  &-wrap {
+  position: relative;
+
+  & &-wrap {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: auto;
-    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    outline: 0;
+    background: #fff;
+    transform: translate3d(-50%, -50%, 0);
+    transition: .3s ease-out;
+    z-index: 1001;
+  }
+
+  & &-top {
+    width: 100%;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  & &-right {
+    height: 100%;
+    top: 50%;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  & &-bottom {
+    width: 100%;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  & &-left {
+    height: 100%;
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    transform: translate3d(0, -50%, 0);
   }
 }

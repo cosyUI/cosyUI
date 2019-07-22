@@ -14,8 +14,9 @@
     width: 100%;
     height: 100%;
     touch-action: pan-x pan-y;
-    overflow-y: auto;
     overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   & &-footer {
@@ -29,11 +30,13 @@
   position: relative;
   overflow: hidden;
   height: 100vh;
+
   .@{css-prefix}page-wrap {
     overflow: auto;
     height: 100%;
     padding-bottom: 100px;
   }
+
   .@{css-prefix}page-tabbar {
     position: absolute;
     bottom: 0;
@@ -56,6 +59,7 @@
 //border
 .@{css-prefix}1px-t {
   position: relative;
+
   &:after {
     .setTopLine()
   }
@@ -63,6 +67,7 @@
 
 .@{css-prefix}1px-r {
   position: relative;
+
   &:after {
     .setRightLine()
   }
@@ -70,6 +75,7 @@
 
 .@{css-prefix}1px-b {
   position: relative;
+
   &:after {
     .setBottomLine()
   }
@@ -77,6 +83,7 @@
 
 .@{css-prefix}1px-l {
   position: relative;
+
   &:after {
     .setLeftLine()
   }
