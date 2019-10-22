@@ -1,8 +1,8 @@
-@import "mask-variable";
+@import "overlay-variable";
 
-@maskPrefixCls: ~"@{css-prefix}mask";
+@overlayPrefixCls: ~"@{css-prefix}overlay";
 
-.@{maskPrefixCls} {
+.@{overlayPrefixCls} {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,6 +12,6 @@
   z-index: 1000;
 
   & &-transparent {
-    background: transparent;
+    background-color: transparent;
   }
 }
