@@ -3,55 +3,62 @@
 @popupPrefixCli: ~"@{css-prefix}popup";
 
 .@{popupPrefixCli} {
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  z-index: 1001;
+
+  & .@{css-prefix}overlay {
+    position: absolute;
+    z-index: 1;
+  }
 
   & &-wrap {
-    position: fixed;
-    top: 50%;
-    left: 50%;
+    position: relative;
     max-height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+    max-width: 100%;
+    overflow: auto;
     -webkit-overflow-scrolling: touch;
-    background: #fff;
-    transform: translate3d(-50%, -50%, 0);
-    transition: .3s ease-out;
-    z-index: 1001;
+    z-index: 2;
   }
 
-  & &-top {
-    width: 100%;
-    top: 0;
-    right: auto;
-    bottom: auto;
-    left: 50%;
-    transform: translate3d(-50%, 0, 0);
+  &&-center {
+    align-items: center;
+    justify-content: center;
   }
 
-  & &-right {
-    height: 100%;
-    top: 50%;
-    right: 0;
-    bottom: auto;
-    left: auto;
-    transform: translate3d(0, -50%, 0);
+  &&-top {
+    align-items: flex-start;
+
+    .@{popupPrefixCli}-wrap {
+      width: 100%;
+    }
   }
 
-  & &-bottom {
-    width: 100%;
-    top: auto;
-    right: auto;
-    bottom: 0;
-    left: 50%;
-    transform: translate3d(-50%, 0, 0);
+  &&-right {
+    justify-content: flex-end;
+
+    .@{popupPrefixCli}-wrap {
+      height: 100%;
+    }
   }
 
-  & &-left {
-    height: 100%;
-    top: 50%;
-    right: auto;
-    bottom: auto;
-    left: 0;
-    transform: translate3d(0, -50%, 0);
+  &&-bottom {
+    align-items: flex-end;
+
+    .@{popupPrefixCli}-wrap {
+      width: 100%;
+    }
+  }
+
+  &&-left {
+    justify-content: flex-start;
+
+    .@{popupPrefixCli}-wrap {
+      height: 100%;
+    }
   }
 }
