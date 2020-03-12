@@ -1,0 +1,12 @@
+{
+  presets: [
+    [
+      "@babel/preset-env", {
+      "targets": {},
+      "corejs": "3",
+      "useBuiltIns": "usage"
+    }
+    ]
+  ],
+  plugins: ["@babel/plugin-syntax-dynamic-import"]
+}
