@@ -4,37 +4,38 @@
 
 .@{popupPrefixCli} {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   display: flex;
-  pointer-events: none;
-  z-index: 1001;
+  background-color: @popup-fill;
+  z-index: @popup-zIndex;
 
   & .@{css-prefix}overlay {
     position: absolute;
-    pointer-events: auto;
     z-index: 1;
   }
 
   & &-wrapper {
     position: relative;
-    max-height: 100%;
     max-width: 100%;
+    max-height: 100%;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-    pointer-events: auto;
     z-index: 2;
   }
 
   &&-center {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     align-items: center;
     justify-content: center;
   }
 
   &&-top {
-    align-items: flex-start;
+    top: 0;
+    right: 0;
+    left: 0;
+    max-height: 100%;
 
     .@{popupPrefixCli}-wrapper {
       width: 100%;
@@ -42,7 +43,10 @@
   }
 
   &&-right {
-    justify-content: flex-end;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
 
     .@{popupPrefixCli}-wrapper {
       height: 100%;
@@ -50,7 +54,10 @@
   }
 
   &&-bottom {
-    align-items: flex-end;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-height: 100%;
 
     .@{popupPrefixCli}-wrapper {
       width: 100%;
@@ -58,7 +65,10 @@
   }
 
   &&-left {
-    justify-content: flex-start;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
 
     .@{popupPrefixCli}-wrapper {
       height: 100%;
