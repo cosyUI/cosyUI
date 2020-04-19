@@ -1,6 +1,7 @@
 @import "popup-variable";
 
 @popupPrefixCli: ~"@{css-prefix}popup";
+@overlayPrefixCli: ~"@{css-prefix}overlay";
 
 .@{popupPrefixCli} {
   position: fixed;
@@ -8,7 +9,7 @@
   background-color: @popup-fill;
   z-index: @popup-zIndex;
 
-  & .@{css-prefix}overlay {
+  & .@{overlayPrefixCli} {
     position: absolute;
     z-index: 1;
   }
